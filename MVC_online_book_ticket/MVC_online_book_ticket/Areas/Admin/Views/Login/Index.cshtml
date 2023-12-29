@@ -1,0 +1,82 @@
+﻿@model MVC_online_book_ticket.Models.DTOs.AuthenticationDTO
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - MVC_online_book_ticket</title>
+
+	<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true">
+	<link href="~/assets/css/style.css" rel="stylesheet" asp-append-version="true">
+</head>
+<body>
+<!-- ============================== Login Section ================== -->
+<section class="py-5">
+	<div class="container">
+
+		<div class="row justify-content-center align-items-center m-auto">
+			<div class="col-12">
+				<div class="bg-mode shadow rounded-3 overflow-hidden">
+					<div class="row g-0">
+						<!-- Vector Image -->
+						<div class="col-lg-6 d-flex align-items-center order-2 order-lg-1">
+							<div class="p-3 p-lg-5">
+									<img src="~/assets/img/login.svg" class="img-fluid" alt="">
+							</div>
+							<!-- Divider -->
+							<div class="vr opacity-1 d-none d-lg-block"></div>
+						</div>
+
+						<!-- Information -->
+						<div class="col-lg-6 order-1">
+							<div class="p-3 p-sm-4 p-md-5">
+								<!-- Logo -->
+								<a href="index.html">
+										<img class="img-fluid mb-4" src="~/assets/img/logo-icon.png" width="70" alt="logo">
+								</a>
+								<!-- Title -->
+
+								<!-- Form START -->
+									<form class="mt-4 text-start" method="post" action="">
+									<div class="form py-4">
+										<div class="form-floating mb-4">
+												<input type="text" asp-for="Username" class="form-control" placeholder="In put your Name">
+											<label>User Name</label>
+										</div>
+											<span asp-validation-for="Username" class="text-danger"></span>
+										<div class="form-floating mb-4">
+												<input type="password" asp-for="Password" class="form-control" placeholder="In put Password">
+											<label>Password</label>
+											<span class="toggle-password position-absolute top-50 end-0 translate-middle-y me-3 fa-regular fa-eye"></span>
+										</div>
+											<span asp-validation-for="Password" class="text-danger"></span>
+
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary full-width font--bold btn-lg">Log In</button>
+										</div>
+
+										<div class="modal-flex-item d-flex align-items-center justify-content-between mb-3">
+											<div class="modal-flex-last">
+													<a asp-area="" asp-controller="Login" asp-action="ForgetPassword" class="text-primary fw-medium">Forget Password?</a>
+											</div>
+										</div>
+									</div>
+
+								</form>
+								<!-- Form END -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- ============================== Login Section End ================== -->
+
+</body>
+</html>

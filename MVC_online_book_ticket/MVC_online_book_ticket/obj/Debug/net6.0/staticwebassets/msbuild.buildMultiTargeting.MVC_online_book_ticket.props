@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVC_online_book_ticket.props" />
+</Project>
