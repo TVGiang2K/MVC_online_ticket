@@ -5,7 +5,7 @@
         Discount,
         Reimbursement
     } 
-    public class Financial : General
+    public class Financial 
     {
         public int FinancialId { get; set; }
 

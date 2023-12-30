@@ -31,12 +31,7 @@ namespace MVC_online_book_ticket.Data
                 }
             );
 
-            modelBuilder.Entity<Accounts>()
-            .Property(e => e.Status)
-            .HasConversion(
-                v => (byte)v,
-                v => (StatusState)v)
-            .HasDefaultValue(StatusState.Active);
+           
 
             modelBuilder.Entity<Accounts>()
             .HasIndex(e => e.Phone)
@@ -46,30 +41,11 @@ namespace MVC_online_book_ticket.Data
            .HasIndex(e => e.Username)
            .IsUnique();
 
-            modelBuilder.Entity<Buses>()
-            .Property(e => e.Status)
-            .HasConversion(
-                v => (byte)v,
-                v => (StatusState)v)
-            .HasDefaultValue(StatusState.Active);
 
             modelBuilder.Entity<Buses>()
             .HasIndex(e => e.BusNumber)
             .IsUnique();
 
-            modelBuilder.Entity<Customers>()
-            .Property(e => e.Status)
-            .HasConversion(
-                v => (byte)v,
-                v => (StatusState)v)
-            .HasDefaultValue(StatusState.Active);
-
-            modelBuilder.Entity<Trips>()
-            .Property(e => e.Status)
-            .HasConversion(
-                v => (byte)v,
-                v => (StatusState)v)
-            .HasDefaultValue(StatusState.Active);
         }
 
         public DbSet<Accounts> Accounts { get; set; }

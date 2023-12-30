@@ -37,12 +37,6 @@ namespace MVC_online_book_ticket.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Create_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Delete_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("Gender")
                         .HasColumnType("bit");
 
@@ -69,14 +63,6 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<byte>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint")
-                        .HasDefaultValue((byte)1);
-
-                    b.Property<DateTime?>("Update_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -97,15 +83,13 @@ namespace MVC_online_book_ticket.Migrations
                             AccountsId = 1,
                             Age = (byte)30,
                             Avatar = "admin-avatar-url",
-                            Create_date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Gender = true,
                             Name = "Quản trị viên",
-                            Password = "oSBAHbpB4kn7X7QOcrBtXDaUaFtSU+/ymFHV1PkWNtOQOhTyqwPDoizoJyKlT5W5",
+                            Password = "Y84a1mLpHrifDu+K7I4bCuSiDQoOaOM53P7UctLWi63ojvLjmTkBLGwu3i7uUbj3",
                             Phone = "123456789",
                             Position = "Vị trí Quản trị viên",
                             Qualification = "Chứng chỉ Quản trị viên",
                             Role = 0,
-                            Status = (byte)0,
                             Username = "admin"
                         });
                 });
@@ -126,26 +110,12 @@ namespace MVC_online_book_ticket.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Create_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Delete_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("LicensePlate")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SeatCapacity")
                         .HasColumnType("int");
-
-                    b.Property<byte>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint")
-                        .HasDefaultValue((byte)1);
-
-                    b.Property<DateTime?>("Update_date")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("BusesId");
 
@@ -166,12 +136,6 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<byte>("Age")
                         .HasColumnType("tinyint");
 
-                    b.Property<DateTime>("Create_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Delete_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -186,14 +150,6 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint")
-                        .HasDefaultValue((byte)1);
-
-                    b.Property<DateTime?>("Update_date")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("CustomersId");
 
@@ -211,12 +167,6 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<int>("Category")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Create_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Delete_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("FinancialFrom")
                         .HasColumnType("int");
 
@@ -226,15 +176,9 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<double>("Percentage")
                         .HasColumnType("float");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Update_date")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("FinancialId");
 
@@ -262,14 +206,8 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<DateTime?>("CancellationDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Create_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("CustomersId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime?>("Delete_date")
-                        .HasColumnType("datetime2");
 
                     b.Property<double?>("RefundAmount")
                         .HasColumnType("float");
@@ -277,17 +215,11 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<DateTime>("ReservationDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
                     b.Property<int>("TripsId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime?>("Update_date")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("ReservationsId");
 
@@ -314,12 +246,6 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<int>("BusesId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Create_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Delete_date")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("DepartureDateTime")
                         .HasColumnType("datetime2");
 
@@ -341,14 +267,6 @@ namespace MVC_online_book_ticket.Migrations
                     b.Property<string>("RouteTrip")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint")
-                        .HasDefaultValue((byte)1);
-
-                    b.Property<DateTime?>("Update_date")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("TripsId");
 

@@ -40,7 +40,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
             else
             {
                 var checkAccount = _context.Accounts.FirstOrDefault(a => a.Username == model.Username);
-                if (checkAccount != null && !_hashPassword.VerifyPassword(model.Password, checkAccount.Password))
+                if (checkAccount != null && _hashPassword.VerifyPassword(model.Password, checkAccount.Password))
                 {
                     if (checkAccount.Role == Role.Administrator)
                     {

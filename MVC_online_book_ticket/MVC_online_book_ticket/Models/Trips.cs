@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVC_online_book_ticket.Models
 {
-    public class Trips : General
+    public class Trips 
     {
         [Key]
         public int TripsId { get; set; }

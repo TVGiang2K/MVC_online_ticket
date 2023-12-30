@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace MVC_online_book_ticket.Models
 {
-    public class Reservations : General
+    public class Reservations 
     {
         [Key]
         public int ReservationsId { get; set; }

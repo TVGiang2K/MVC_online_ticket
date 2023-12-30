@@ -1,0 +1,141 @@
+﻿@model MVC_online_book_ticket.Models.Accounts
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var randomString = Guid.NewGuid().ToString();
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Forms add Accounts</h5>
+            <a asp-action="Index" class="d-flex btn btn-outline-link m-1 text-primary">Back to list</a>
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Edit" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Username" class="form-label"></label>
+                                    <input asp-for="Username" class="form-control" />
+                                    <span asp-validation-for="Username" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Password" class="form-label"></label>
+                                    <input asp-for="Password" type="password" class="form-control" />
+                                    <span asp-validation-for="Password" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Name" class="form-label"></label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Age" class="form-label"></label>
+                                    <input asp-for="Age" class="form-control" />
+                                    <span asp-validation-for="Age" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Phone" class="form-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Qualification" class="form-label"></label>
+                                    <input asp-for="Qualification" class="form-control" />
+                                    <span asp-validation-for="Qualification" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Position" class="form-label"></label>
+                                    <input asp-for="Position" class="form-control" />
+                                    <span asp-validation-for="Position" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <b><label asp-for="Gender" class="control-label"></label></b>
+                                    <div class="radio inlineblock m-r-20">
+                                        <input asp-for="Gender" type="radio" id="M" class="with-gap" value="true" checked>
+                                        <label for="M">Man</label>
+                                    </div>
+                                    <div class="radio inlineblock">
+                                        <input asp-for="Gender" type="radio" id="W" class="with-gap" value="false">
+                                        <label for="W">Woman</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Avatar" class="control-label"></label>
+                                    <input asp-for="Avatar" type="file" class="form-control" id="avatarInput" onchange="previewImage()" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <label class="control-label mx-5">New Avatar</label>
+                                <div class="mb-3">
+                                    <img id="avatarPreview" src="#" alt="Preview" style="max-width: 100%; max-height: 200px; display: none;" />
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <label class="control-label mx-5">Old Avatar</label>
+                                <div class="mb-3">
+                                    <img id="avatarPreview" src="/img/@Model.Avatar" alt="@Model.Avatar" style="max-width: 100%; max-height: 200px;" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage() {
+        var input = document.getElementById('avatarInput');
+        var preview = document.getElementById('avatarPreview');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    }
+   
+</script>
+

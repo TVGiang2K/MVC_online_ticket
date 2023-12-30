@@ -8,7 +8,7 @@ namespace MVC_online_book_ticket.Models
         Administrator,
         Employees
     }
-    public class Accounts : General
+    public class Accounts 
     {
         [Key]
         public int AccountsId { get; set; }
@@ -19,7 +19,7 @@ namespace MVC_online_book_ticket.Models
         public byte Age { get; set; }
         public string Phone { get; set; }
         public bool Gender { get; set; }
-        public string Avatar { get; set; }
+        public string? Avatar { get; set; }
         public string Qualification { get; set; }
         public string Position { get; set; }
         public Role Role { get; set; }

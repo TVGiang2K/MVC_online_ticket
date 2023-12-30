@@ -1,7 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Index";
-}
+﻿@model IEnumerable<MVC_online_book_ticket.Models.Accounts>
 
+@{
+    int index = 1;
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
 <div class="container-fluid">
     <div class="row">
         <div class="card w-100">
@@ -9,7 +12,7 @@
                 <h5 class="d-flex card-title fw-semibold mb-4">List Accounts</h5>
                 <div class="row">
                     <div class="col-sm-2 col-xl-2">
-                        <router-link to="/admin/accountCreate" class="d-flex btn btn-outline-link m-1 text-primary">Add a Account</router-link>
+                        <a asp-action="Create" class="d-flex btn btn-outline-link m-1 text-primary">Add a Account</a>
                     </div>
                     <div class="col-sm-6 col-xl-6 ">
                         <form class="d-flex">
@@ -30,39 +33,57 @@
                                     <h6 class="fw-semibold mb-0">Id</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Assigned</h6>
+                                    <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.Username)</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Name</h6>
+                                    <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.Name)</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Priority</h6>
+                                    <h6 class="fw-semibold mb-0">
+                                        @Html.DisplayNameFor(model => model.Phone)
+                                    </h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Budget</h6>
+                                    @Html.DisplayNameFor(model => model.Avatar)
+                                </th>
+                                <th class="border-bottom-0">
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach (var item in Model) {
                             <tr>
-                                <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
+                                <td class="border-bottom-0"><h6 class="fw-semibold mb-0">
+                                    @index
+                                </h6></td>
                                 <td class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-1">Sunil Joshi</h6>
-                                    <span class="fw-normal">Web Designer</span>
+                                    <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.Username)
+                                    </h6>
                                 </td>
                                 <td class="border-bottom-0">
-                                    <p class="mb-0 fw-normal">Elite Admin</p>
+                                    <h6 class="fw-semibold mb-0">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </h6>
                                 </td>
                                 <td class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0 fs-4">$3.9</h6>
+                                    <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.Phone)
+                                    </h6>
                                 </td>
                                 <td class="border-bottom-0">
-                                    <router-link to="/admin/accountEdit" class="badge bg-primary rounded-3 fw-semibold">Edit</router-link> |
-                                    <router-link to="/admin/accountDetail" class="badge bg-success rounded-3 fw-semibold">Detail</router-link> |
-                                    <a class="badge bg-danger rounded-3 fw-semibold">Delete</a>
+                                    <h6 class="fw-semibold mb-0">
+                                            <img src="/img/@item.Avatar" alt="@item.Avatar" width="100"; height="100"; />
+                                    </h6>
+                                </td>
+                                <td class="border-bottom-0">
+                                    <a asp-action="Edit" asp-route-id="@item.AccountsId" class="badge bg-primary rounded-3 fw-semibold">Edit</a>|
+                                    <a asp-action="Details" asp-route-id="@item.AccountsId" class="badge bg-success rounded-3 fw-semibold">Detail</a>|
+                                    <a asp-action="Delete" asp-route-id="@item.AccountsId" class="badge bg-danger rounded-3 fw-semibold">Delete</a>
                                 </td>
                             </tr>
-
+                                index++;
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -70,3 +91,4 @@
         </div>
     </div>
 </div>
+

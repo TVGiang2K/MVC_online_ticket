@@ -2,7 +2,7 @@
 
 namespace MVC_online_book_ticket.Models
 {
-    public class Customers : General
+    public class Customers 
     {
         [Key]
         public int CustomersId { get; set; }

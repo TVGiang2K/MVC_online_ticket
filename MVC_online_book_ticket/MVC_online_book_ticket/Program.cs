@@ -62,13 +62,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 
-app.UseStaticFiles();
-app.UseDirectoryBrowser(new DirectoryBrowserOptions
-{
-    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Avatars")),
-    RequestPath = "/Avatars"
-});
-
 app.MapControllerRoute(
     name: "Admin",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

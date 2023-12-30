@@ -11,7 +11,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
 	{
 		public override void OnActionExecuting(ActionExecutingContext context)
 		{
-			string jwtToken = HttpContext.Session.GetString("JwtToken");
+			string jwtToken = context.HttpContext.Session.GetString("LoginToken");
 			if (string.IsNullOrEmpty(jwtToken))
 			{
 				context.Result = new RedirectToRouteResult(
