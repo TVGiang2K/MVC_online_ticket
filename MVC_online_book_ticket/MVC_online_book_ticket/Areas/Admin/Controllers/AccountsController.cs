@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC_online_book_ticket.Common;
 using MVC_online_book_ticket.Data;
 using MVC_online_book_ticket.Models;
+using X.PagedList;
 
 namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
@@ -23,28 +27,37 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
             _hashPassword = hashPassword;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name, int page = 1)
         {
-              return _context.Accounts != null ? 
-                          View(await _context.Accounts.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Accounts'  is null.");
+            int limit = 5;
+            var accounts = await _context.Accounts.OrderBy(a => a.AccountsId).ToPagedListAsync(page, limit);
+            if (!String.IsNullOrEmpty(name))
+            {
+                accounts = await _context.Accounts.Where(a=> a.Name.Contains(name)).OrderBy(a => a.AccountsId).ToPagedListAsync(page, limit);
+            }
+            return View(accounts);
         }
 
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int page = 1)
         {
             if (id == null || _context.Accounts == null)
             {
                 return NotFound();
             }
 
-            var accounts = await _context.Accounts
+            var account = await _context.Accounts
                 .FirstOrDefaultAsync(m => m.AccountsId == id);
-            if (accounts == null)
+
+            int limit = 5;
+            var reservations = await _context.Reservations.Where(r => r.AccountsId == account.AccountsId).OrderBy(a => a.ReservationDateTime).ToPagedListAsync(page, limit);
+            if (account == null)
             {
                 return NotFound();
             }
 
-            return View(accounts);
+            ViewBag.account = account;
+
+            return View(reservations);
         }
 
         public IActionResult Create()
@@ -61,6 +74,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
             {
                 try
                 {
+
                     var files = HttpContext.Request.Form.Files;
                     if (files.Count() > 0 && files[0].Length > 0)
                     {
@@ -74,20 +88,39 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                         }
                     }
 
-                    if(accounts.Avatar == null)
+                    var existingBus = await _context.Accounts.FirstOrDefaultAsync(b => b.Username == accounts.Username);
+
+                    if (existingBus != null)
                     {
-                        ViewBag.errorA = "Avatar is required";
+                        ViewBag.errN = "Error: Accounts with the Username already exists.";
                         return View(accounts);
                     }
+
+
                     accounts.Password = _hashPassword.SetPassword(accounts.Password);
+                    accounts.Role = Role.Employees;
                     _context.Add(accounts);
                     await _context.SaveChangesAsync();
+                    TempData["success"] = "Add successfully!";
                     return RedirectToAction("Index", "Accounts", new { area = "Admin" });
                 }
-                catch
+                catch 
                 {
-                    ViewBag.error = "Error: Unable to add new Account";
-                    return View(accounts);
+                    if (accounts.Avatar == null)
+                    {
+                        ViewBag.errA = "Avatar is required";
+                        return View(accounts);
+                    }
+                    else if (accounts.Password == null)
+                    {
+                        ViewBag.errP = "Password is required";
+                        return View(accounts);
+                    }
+                    else
+                    {
+                        ViewBag.error = "Error: Unable to add new Account";
+                        return View(accounts);
+                    }
                 }
             }
             return View(accounts);
@@ -111,12 +144,16 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AccountsId,Username,Password,Name,Age,Phone,Gender,Avatar,Qualification,Position,Role,Create_date,Update_date,Delete_date,Status")] Accounts accounts)
+        public async Task<IActionResult> Edit(int id,[Bind("AccountsId,Username,Password,Name,Age,Phone,Gender,Avatar,Qualification,Position,Role,Create_date,Update_date,Delete_date,Status")] Accounts accounts)
         {
-            if (id != accounts.AccountsId)
+            var acc = await _context.Accounts.FirstOrDefaultAsync(m => m.AccountsId == id);
+
+            if (id  != accounts.AccountsId)
             {
-                return NotFound();
+                ViewBag.error = "Error: Unable to update new Account";
+                return View(accounts);
             }
+
             if (ModelState.IsValid)
             {
                 try
@@ -135,23 +172,37 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                     }
                     else
                     {
-                        var acc = await _context.Accounts.FirstOrDefaultAsync(m => m.AccountsId == id);
                         accounts.Avatar = acc.Avatar;
                     }
 
-                    _context.Update(accounts);
+
+                    if (!string.IsNullOrEmpty(accounts.Password)) {
+                        accounts.Password = _hashPassword.SetPassword(accounts.Password);
+                    }
+                    else
+                    {
+                        accounts.Password = acc.Password;
+                    }
+
+                    accounts.Role = Role.Employees;
+
+                    _context.Entry(acc).CurrentValues.SetValues(accounts);
                     await _context.SaveChangesAsync();
+
+                    TempData["success"] = "Update successfully!";
                     return RedirectToAction("Index", "Accounts", new { area = "Admin" });
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!AccountsExists(accounts.AccountsId))
                     {
-                        return NotFound();
+                        ViewBag.error = "Error: Account not found";
+                        return View(accounts);
                     }
                     else
                     {
-                        throw;
+                        ViewBag.error = "Error: Unable to update new Account";
+                        return View(accounts);
                     }
                 }
             }
@@ -162,20 +213,21 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-
-            
-            var accounts = await _context.Accounts.FindAsync(id);
-
-            if (accounts != null)
-            {
-                _context.Accounts.Remove(accounts);
-            }
-
-
+            var accounts = await _context.Accounts
+                                .Where(a => a.AccountsId == id && a.Role != Role.Administrator)
+                                .FirstOrDefaultAsync();
             try
             {
-                await _context.SaveChangesAsync();
-                TempData["success"] = "Delete successfully!";
+                if (accounts != null)
+                {
+                    _context.Accounts.Remove(accounts);
+                    await _context.SaveChangesAsync();
+                    TempData["success"] = "Delete successfully!";
+                }
+                else
+                {
+                    TempData["error"] = "Don't Delete Accounts Admin failed!";
+                }
             }
             catch
             {

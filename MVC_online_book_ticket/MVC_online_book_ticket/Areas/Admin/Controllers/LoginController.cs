@@ -42,17 +42,14 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                 var checkAccount = _context.Accounts.FirstOrDefault(a => a.Username == model.Username);
                 if (checkAccount != null && _hashPassword.VerifyPassword(model.Password, checkAccount.Password))
                 {
-                    if (checkAccount.Role == Role.Administrator)
-                    {
                         var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
                         HttpContext.Session.SetString("LoginToken", token);
-						Console.WriteLine($"Login successful. Redirecting to Home/Index in Admin area.");
+                    if (checkAccount.Role == Role.Administrator)
+                    {
 						return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
                     else
                     {
-                        var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
-                        HttpContext.Session.SetString("LoginToken", token);
                         return RedirectToAction("Index", "Home");
                     }
                 }

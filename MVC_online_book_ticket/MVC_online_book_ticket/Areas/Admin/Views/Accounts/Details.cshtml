@@ -1,79 +1,164 @@
-﻿@model MVC_online_book_ticket.Models.Accounts
-
+﻿@model X.PagedList.IPagedList<MVC_online_book_ticket.Models.Reservations>
+@using X.PagedList.Mvc.Core;
 @{
+    var pageSize = Model.PageSize;
+    var currentPage = Model.PageNumber;
+    var indexStart = (currentPage - 1) * pageSize + 1;
     ViewData["Title"] = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var ac = ViewBag.account;
 }
 
-<h1>Details</h1>
+<div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Account Detail</h5>
 
-<div>
-    <h4>Accounts</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Avatar)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Avatar)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Qualification)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Qualification)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Position)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Position)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Role)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.AccountsId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        Username
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Username)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Name
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Age
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Age
+                    </dd>
+                    <dt class="col-sm-2">
+                        Birthday
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Birthday
+                    </dd>
+                    <dt class="col-sm-2">
+                        Phone
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Phone
+                    </dd>
+                    <dt class="col-sm-2">
+                        Email
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Email
+                    </dd>
+                    <dt class="col-sm-2">
+                        Gender
+                    </dt>
+                    <dd class="col-sm-10">
+                        @if (ac.Gender == true)
+                        {
+                            <span>Man</span>
+                        }
+                        else
+                        {
+                            <span>Woman</span>
+                        }
+                    </dd>
+                    <dt class="col-sm-2">
+                        Avatar
+                    </dt>
+                    <dd class="col-sm-10">
+                        <img src="/img/@ac.Avatar" alt="@ac.Avatar" width="100" />
+                    </dd>
+                    <dt class="col-sm-2">
+                        Qualification
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Qualification
+                    </dd>
+                    <dt class="col-sm-2">
+                        Position
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Position
+                    </dd>
+                    <dt class="col-sm-2">
+                        Role
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ac.Role
+                    </dd>
+                </dl>
+                <div class="row">
+                    <div class="col-sm-2 col-xl-2 mx-2 ">
+                    <a asp-action="Edit" asp-route-id="@ac.AccountsId" class=" d-flex btn btn-outline-link m-1 btn btn-primary">Edit</a> 
+                    </div>
+                <div class="col-sm-2 col-xl-2 mx-2 ">
+                        <a asp-action="Index" class="d-flex btn btn-outline-link m-1 btn btn-warning">Back to list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="card w-100">
+        <div class="card-body p-4">
+            <h5 class="d-flex card-title fw-semibold mb-4">List of Reservations on the Account</h5>
+
+            <div class="table-responsive">
+                <table class="table table-bordered text-nowrap mb-0 align-middle border-1">
+                    <thead class="text-dark fs-4">
+                        <tr>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">No</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().ReservationsId)</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().ReservationDateTime)</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().ActiveReservation)</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var r in Model)
+                    {
+                        
+                    <tr>
+                            <td class="border-bottom-0">
+                                @indexStart
+                            </td>
+                            <td class="border-bottom-0">
+                                @Html.DisplayNameFor(model => model.FirstOrDefault().ReservationsId)
+                            </td>
+                            <td class="border-bottom-0">
+                                @Html.DisplayNameFor(model => model.FirstOrDefault().ReservationDateTime)
+
+                            </td>
+                            <td class="border-bottom-0">
+                                @Html.DisplayNameFor(model => model.FirstOrDefault().ActiveReservation)
+
+                            </td>
+                        </tr>
+                        indexStart++;
+                    }
+
+                    </tbody>
+                </table>
+            <br />
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),    new PagedListRenderOptions
+            {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" }
+            }
+            )
+            </div>
+        </div>
+    </div>
 </div>

@@ -20,18 +20,22 @@ namespace MVC_online_book_ticket.Data
                     AccountsId = 1,
                     Username = "admin",
                     Password = pass.SetPassword("1234$"),
-                    Name = "Quản trị viên",
+                    Email = "SRCTravelAgencies@gmail.com",
+                    Name = "Administrator",
                     Age = 30,
-                    Phone = "123456789",
+                    Phone = "0333333333",
                     Gender = true,
-                    Avatar = "admin-avatar-url",
-                    Qualification = "Chứng chỉ Quản trị viên",
-                    Position = "Vị trí Quản trị viên",
+                    Avatar = "user-1.jpg",
+                    Qualification = "Administrator Certificate",
+                    Position = "Administrator position",
                     Role = Role.Administrator,
                 }
             );
 
-           
+
+            modelBuilder.Entity<Accounts>()
+            .HasIndex(e => e.Email)
+            .IsUnique();
 
             modelBuilder.Entity<Accounts>()
             .HasIndex(e => e.Phone)
@@ -52,7 +56,7 @@ namespace MVC_online_book_ticket.Data
         public DbSet<Customers> Customers { get; set; }
         public DbSet<Buses> Buses { get; set; }
         public DbSet<Trips> Trips { get; set; }
-        public DbSet<Financial> Financials { get; set; }
+        public DbSet<Financials> Financials { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
 
 

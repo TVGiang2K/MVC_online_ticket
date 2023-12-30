@@ -1,0 +1,75 @@
+﻿@model MVC_online_book_ticket.Models.Buses
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var er = ViewBag.error;
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3 col-xl-3">
+                    <h5 class="card-title fw-semibold mb-4">Forms edit Bus</h5>
+                </div>
+                <div class="col-sm-9 col-xl-9">
+                    <h3 style="color:red"><span class="text-danger">@er</span></h3>
+                </div>
+                <div class="col-sm-2 col-xl-2">
+                    <a asp-action="Index" class="d-flex btn btn-outline-link m-1 btn btn-warning">Back to list</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="BusesId" />
+                        <div class="row">
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="BusNumber" class="form-label"></label>
+                                    <input asp-for="BusNumber" class="form-control" />
+                                    <span asp-validation-for="BusNumber" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="BusTypes" class="form-label"></label>
+                                    <input asp-for="BusTypes" class="form-control" />
+                                    <span asp-validation-for="BusTypes" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="LicensePlate" class="form-label"></label>
+                                    <input asp-for="LicensePlate" class="form-control" />
+                                    <span asp-validation-for="LicensePlate" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="SeatCapacity" class="form-label"></label>
+                                    <input asp-for="SeatCapacity" class="form-control" />
+                                    <span asp-validation-for="SeatCapacity" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -6,9 +6,9 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
 
 
-	
-	public class AdminBaseController : Controller, IActionFilter
+    public class AdminBaseController : Controller, IActionFilter
 	{
+		[Authorize(Roles = "Administrator")]
 		public override void OnActionExecuting(ActionExecutingContext context)
 		{
 			string jwtToken = context.HttpContext.Session.GetString("LoginToken");

@@ -1,0 +1,54 @@
+﻿@model MVC_online_book_ticket.Models.Financials
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Financial Detail</h5>
+
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.FinancialFrom)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FinancialFrom)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.FinancialTo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FinancialTo)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Percentage)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Percentage)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+            </dl>
+            <div class="row">
+                <div class="col-sm-2 col-xl-2 mx-2 ">
+                    <a asp-action="Edit" asp-route-id="@Model.FinancialsId" class=" d-flex btn btn-outline-link m-1 btn btn-primary">Edit</a>
+                </div>
+                <div class="col-sm-2 col-xl-2 mx-2 ">
+                    <a asp-action="Index" class="d-flex btn btn-outline-link m-1 btn btn-warning">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,7 +16,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.23",
           "Microsoft.IdentityModel.Tokens": "6.33.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
-          "System.IdentityModel.Tokens.Jwt": "6.33.0"
+          "System.IdentityModel.Tokens.Jwt": "6.33.0",
+          "X.PagedList.Mvc.Core": "9.0.0-prerelease"
         },
         "runtime": {
           "MVC_online_book_ticket.dll": {}
@@ -559,6 +560,14 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "JetBrains.Annotations/2022.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "4242.42.42.42",
+            "fileVersion": "2022.3.1.0"
           }
         }
       },
@@ -2685,6 +2694,28 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "X.PagedList/9.0.0-prerelease": {
+        "dependencies": {
+          "JetBrains.Annotations": "2022.3.1"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
+      },
+      "X.PagedList.Mvc.Core/9.0.0-prerelease": {
+        "dependencies": {
+          "X.PagedList": "9.0.0-prerelease"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
       }
     }
   },
@@ -3043,6 +3074,13 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "JetBrains.Annotations/2022.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-11nsS3+lFICGkztVs9PP2NRItxf9fF+qD6xEW/T0YGto52zj07wseUeBdMAU1ah9HNVTDZyRC1u4NWdtJScwhw==",
+      "path": "jetbrains.annotations/2022.3.1",
+      "hashPath": "jetbrains.annotations.2022.3.1.nupkg.sha512"
     },
     "MessagePack/2.1.152": {
       "type": "package",
@@ -4268,6 +4306,20 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "X.PagedList/9.0.0-prerelease": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X8g+0H+OvauZSd22qreeiBlGPI5gMw8R+TDacAplt7hnBBmWoqiJho6Hy2ROW8z7KjtAVqxhye/FoB9EX7wgvg==",
+      "path": "x.pagedlist/9.0.0-prerelease",
+      "hashPath": "x.pagedlist.9.0.0-prerelease.nupkg.sha512"
+    },
+    "X.PagedList.Mvc.Core/9.0.0-prerelease": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ixEd88gKHjHW1UJn9fmxcPr0bGx4iQXKhXyZ1chBpLPAWbcjZxAD0+F2U2hF5dGQGG/+0Ugs1B/C6m/7pzrJZA==",
+      "path": "x.pagedlist.mvc.core/9.0.0-prerelease",
+      "hashPath": "x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512"
     }
   }
 }
