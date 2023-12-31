@@ -23,6 +23,7 @@ namespace MVC_online_book_ticket.Data
                     Email = "SRCTravelAgencies@gmail.com",
                     Name = "Administrator",
                     Age = 30,
+                    Birthday = new DateTime(2024, 1, 1),
                     Phone = "0333333333",
                     Gender = true,
                     Avatar = "user-1.jpg",

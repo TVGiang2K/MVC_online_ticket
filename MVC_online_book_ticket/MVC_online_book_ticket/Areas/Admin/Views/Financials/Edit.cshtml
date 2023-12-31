@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-lg-6 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="Title" class="control-label"></label>
+                                    <label asp-for="Title" class="form-label"></label>
                                     <input asp-for="Title" class="form-control" />
                                     <span asp-validation-for="Title" class="text-danger"></span>
                                 </div>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-lg-6 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="FinancialFrom" class="control-label"></label>
+                                    <label asp-for="FinancialFrom" class="form-label"></label>
                                     <input asp-for="FinancialFrom" class="form-control" />
                                     <span asp-validation-for="FinancialFrom" class="text-danger"></span>
                                 </div>
@@ -45,7 +45,7 @@
 
                             <div class="col-lg-6 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="Percentage" class="control-label"></label>
+                                    <label asp-for="Percentage" class="form-label"></label>
                                     <input asp-for="Percentage" class="form-control" />
                                     <span asp-validation-for="Percentage" class="text-danger"></span>
                                 </div>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-lg-6 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="FinancialTo" class="control-label"></label>
+                                    <label asp-for="FinancialTo" class="form-label"></label>
                                     <input asp-for="FinancialTo" class="form-control" />
                                     <span asp-validation-for="FinancialTo" class="text-danger"></span>
                                 </div>
@@ -62,14 +62,14 @@
 
                             <div class="col-lg-6 d-flex">
                                 <div class="mb-3">
-                                    <b><label asp-for="Category" class="control-label"></label></b>
+                                    <label asp-for="Category" class="form-label"></label>
                                     <div class="radio inlineblock m-r-20">
                                         <input asp-for="Category" type="radio" id="Discount" class="with-gap" value="Discount" checked>
-                                        <label for="Discount">Man</label>
+                                        <label for="Discount">Discount</label>
                                     </div>
                                     <div class="radio inlineblock">
                                         <input asp-for="Category" type="radio" id="Reimbursement" class="with-gap" value="Reimbursement">
-                                        <label for="Reimbursement">Woman</label>
+                                        <label for="Reimbursement">Reimbursement</label>
                                     </div>
                                 </div>
 

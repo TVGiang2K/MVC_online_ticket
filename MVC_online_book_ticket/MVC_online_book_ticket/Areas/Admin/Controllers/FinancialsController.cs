@@ -14,7 +14,7 @@ using X.PagedList;
 namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class FinancialsController : Controller
+    public class FinancialsController : AdminBaseController
     {
         private readonly AppDbContext _context;
 
@@ -64,7 +64,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FinancialId,Title,FinancialFrom,FinancialTo,Percentage,Category")] Financial financial)
+        public async Task<IActionResult> Create([Bind("FinancialsId,Title,FinancialFrom,FinancialTo,Percentage,Category")] Financials financial)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                 }
                 catch
                 {
-                    ViewBag.error = "Error: Unable to add new Bus";
+                    ViewBag.error = "Error: Unable to add new Financial";
                     return View(financial);
                 }
             }
@@ -105,7 +105,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FinancialId,Title,FinancialFrom,FinancialTo,Percentage,Category")] Financials financial)
+        public async Task<IActionResult> Edit(int id, [Bind("FinancialsId,Title,FinancialFrom,FinancialTo,Percentage,Category")] Financials financial)
         {
             if (id != financial.FinancialsId)
             {

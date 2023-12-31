@@ -1,4 +1,4 @@
-﻿
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @{
     Layout = null;
 }
@@ -66,39 +66,15 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                            <a class="sidebar-link" asp-area="Admin" asp-controller="Financials" asp-action="Index">
                                 <span>
                                     <i class="ti ti-discount"></i>
                                 </span>
-                                <span class="hide-menu">Financial</span>
+                                <span class="hide-menu">Financials</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-ticket"></i>
-                                </span>
-                                <span class="hide-menu">Ticket</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-armchair"></i>
-                                </span>
-                                <span class="hide-menu">Seat</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-input-search"></i>
-                                </span>
-                                <span class="hide-menu">Reservation</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                            <a class="sidebar-link" asp-area="Admin" asp-controller="Trips" asp-action="Index">
                                 <span>
                                     <i class="ti ti-route"></i>
                                 </span>
@@ -164,11 +140,6 @@
   
     <script src="~/assetsAdmin/libs/jquery/dist/jquery.min.js"></script>
     <script src="~/assetsAdmin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/assetsAdmin/js/sidebarmenu.js"></script>
-    <script src="~/assetsAdmin/js/app.min.js"></script>
-    <script src="~/assetsAdmin/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="~/assetsAdmin/libs/simplebar/dist/simplebar.js"></script>
-    <script src="~/assetsAdmin/js/dashboard.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

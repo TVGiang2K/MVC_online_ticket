@@ -86,14 +86,14 @@
                             </div>
                             <div class="col-lg-4 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="Email" class="control-label"></label>
+                                    <label asp-for="Email" class="form-label"></label>
                                     <input asp-for="Email" class="form-control" />
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-lg-4 d-flex">
                                 <div class="mb-3">
-                                    <b><label asp-for="Gender" class="control-label"></label></b>
+                                    <b><label asp-for="Gender" class="form-label"></label></b>
                                         <div class="radio inlineblock m-r-20">
                                             <input asp-for="Gender" type="radio" id="M" class="with-gap" value="true" checked>
                                             <label for="M">Man</label>
@@ -107,7 +107,7 @@
                             </div>
                             <div class="col-lg-12 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="Birthday" class="control-label"></label>
+                                    <label asp-for="Birthday" class="form-label"></label>
                                     <input asp-for="Birthday" class="form-control" />
                                     <span asp-validation-for="Birthday" class="text-danger"></span>
 
@@ -115,7 +115,7 @@
                             </div>
                             <div class="col-lg-6 d-flex">
                                 <div class="mb-3">
-                                    <label asp-for="Avatar" class="control-label"></label>
+                                    <label asp-for="Avatar" class="form-label"></label>
                                     <input asp-for="Avatar" type="file" class="form-control" id="avatarInput" onchange="previewImage()" />
                                     <span class="text-danger">@erA</span>
                                 </div>

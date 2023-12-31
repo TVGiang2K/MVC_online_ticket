@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient.Server;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MVC_online_book_ticket.Common;
 using MVC_online_book_ticket.Data;
@@ -31,7 +32,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(AuthenticationDTO model)
+        public async Task<IActionResult> Index([Bind("Username,Password")] AuthenticationDTO model)
         {
             if (!ModelState.IsValid)
             {
@@ -39,27 +40,20 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
             }
             else
             {
-                var checkAccount = _context.Accounts.FirstOrDefault(a => a.Username == model.Username);
-                if (checkAccount != null && _hashPassword.VerifyPassword(model.Password, checkAccount.Password))
+                var checkAccount = await _context.Accounts.FirstOrDefaultAsync(a => a.Username == model.Username);
+                if (checkAccount != null && _hashPassword.VerifyPassword(model.Password, checkAccount.Password) && checkAccount.Role == Role.Administrator)
                 {
-                        var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
-                        HttpContext.Session.SetString("LoginToken", token);
-                    if (checkAccount.Role == Role.Administrator)
-                    {
-						return RedirectToAction("Index", "Home", new { area = "Admin" });
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
+                    HttpContext.Session.SetString("LoginToken", token);
+				    return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
                 else
                 {
-                    ModelState.AddModelError("", " Invalid username or password");
-                }
+					ViewBag.error = "Error: Invalid username or password";
+					return View(model);
+				}
 
-            }
-            return View();
+			}
         }
 
 
@@ -92,7 +86,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
 
 
 
-        public IActionResult ForgetPassword()
+        /*public IActionResult ForgetPassword()
         {
             return View();
         }
@@ -117,12 +111,12 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                 }
             }
             return View();
-        }
+        }*/
 
-        public IActionResult ChangePassword()
+        /*public IActionResult ChangePassword()
         {
             return View();
-        }
+        }*/
 
         [HttpGet]
         public IActionResult Logout()

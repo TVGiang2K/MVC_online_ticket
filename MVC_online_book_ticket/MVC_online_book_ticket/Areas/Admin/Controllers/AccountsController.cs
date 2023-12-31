@@ -16,7 +16,7 @@ using X.PagedList;
 namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class AccountsController : Controller
+    public class AccountsController : AdminBaseController
     {
         private readonly AppDbContext _context;
         private readonly HashPassword _hashPassword;
@@ -68,7 +68,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AccountsId,Username,Password,Name,Age,Phone,Gender,Avatar,Qualification,Position,Role,Create_date,Update_date,Delete_date,Status")] Accounts accounts)
+        public async Task<IActionResult> Create([Bind("AccountsId,Username,Password,Name,Age,Birthday,Phone,Email,Gender,Avatar,Qualification,Position,Role")] Accounts accounts)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                     {
                         var file = files[0];
                         var FileName = GenerateUniqueFileName(file.FileName);
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", FileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "accounts", FileName);
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             file.CopyTo(stream);
@@ -102,7 +102,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                     _context.Add(accounts);
                     await _context.SaveChangesAsync();
                     TempData["success"] = "Add successfully!";
-                    return RedirectToAction("Index", "Accounts", new { area = "Admin" });
+                    return RedirectToAction(nameof(Index));
                 }
                 catch 
                 {
@@ -144,7 +144,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,[Bind("AccountsId,Username,Password,Name,Age,Phone,Gender,Avatar,Qualification,Position,Role,Create_date,Update_date,Delete_date,Status")] Accounts accounts)
+        public async Task<IActionResult> Edit(int id,[Bind("AccountsId,Username,Password,Name,Age,Birthday,Phone,Email,Gender,Avatar,Qualification,Position,Role")] Accounts accounts)
         {
             var acc = await _context.Accounts.FirstOrDefaultAsync(m => m.AccountsId == id);
 
@@ -163,7 +163,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                     {
                         var file = files[0];
                         var FileName = GenerateUniqueFileName(file.FileName);
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", FileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "accounts", FileName);
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             file.CopyTo(stream);
@@ -190,7 +190,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                     await _context.SaveChangesAsync();
 
                     TempData["success"] = "Update successfully!";
-                    return RedirectToAction("Index", "Accounts", new { area = "Admin" });
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -233,7 +233,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
             {
                 TempData["error"] = "Delete failed!";
             }
-            return RedirectToAction("Index", "Accounts", new { area = "Admin" });
+            return RedirectToAction(nameof(Index));
         }
 
         private bool AccountsExists(int id)

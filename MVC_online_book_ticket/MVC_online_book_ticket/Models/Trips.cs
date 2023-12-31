@@ -8,6 +8,7 @@ namespace MVC_online_book_ticket.Models
         [Key]
         public int TripsId { get; set; }
 
+        [Display(Name = "Buses")]
         [ForeignKey("BusesId")]
         public int BusesId { get; set; }
 
@@ -21,7 +22,7 @@ namespace MVC_online_book_ticket.Models
 
         [StringLength(200)]
         [Column(TypeName = "nvarchar(200)")]
-        public string Image {  get; set; }
+        public string? Image {  get; set; }
 
         [DataType(DataType.Date)]
         public DateTime DepartureDateTime { get; set; }
@@ -39,6 +40,6 @@ namespace MVC_online_book_ticket.Models
 
         public double BasePrice { get; set; }
 
-        public virtual Buses Buses { get; set; }
+        public virtual Buses? Buses { get; set; }
     }
 }

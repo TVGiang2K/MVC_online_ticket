@@ -13,7 +13,7 @@ using X.PagedList;
 namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class BusesController : Controller
+    public class BusesController : AdminBaseController
     {
         private readonly AppDbContext _context;
 
@@ -150,6 +150,10 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
    
         public async Task<IActionResult> Delete(int id)
         {
+            if (_context.Buses == null)
+            {
+                return Problem("Entity set 'AppDbContext.Buses'  is null.");
+            }
             try
             { 
                 var buses = await _context.Buses.FindAsync(id);
@@ -166,8 +170,8 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                 TempData["error"] = "Delete failed!";
 
             }
-            
-            return RedirectToAction("Index", "Buses", new { area = "Admin" });
+
+            return RedirectToAction(nameof(Index));
         }
 
         private bool BusesExists(int id)

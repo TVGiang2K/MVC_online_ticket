@@ -85,13 +85,13 @@
                                 </td>
                                 <td class="border-bottom-0">
                                     <h6 class="fw-semibold mb-0">
-                                            <img src="/img/@item.Avatar" alt="@item.Avatar" width="100"; height="100"; />
+                                            <img src="/img/accounts/@item.Avatar" alt="@item.Avatar" width="100" ; height="100" ; />
                                     </h6>
                                 </td>
                                 <td class="border-bottom-0">
                                     <a asp-action="Edit" asp-route-id="@item.AccountsId" class="badge bg-primary rounded-3 fw-semibold">Edit</a>|
                                     <a asp-action="Details" asp-route-id="@item.AccountsId" class="badge bg-success rounded-3 fw-semibold">Detail</a>|
-                                    <a asp-action="Delete" asp-route-id="@item.AccountsId" class="badge bg-danger rounded-3 fw-semibold">Delete</a>
+                                        <a asp-action="Delete" asp-route-id="@item.AccountsId" onclick="return confirm('Are you sure you want to delete this item?')" class="badge bg-danger rounded-3 fw-semibold">Delete</a>
                                 </td>
                             </tr>
                                 indexStart++;

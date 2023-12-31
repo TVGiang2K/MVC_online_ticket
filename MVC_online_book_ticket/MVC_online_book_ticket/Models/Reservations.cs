@@ -31,10 +31,10 @@ namespace MVC_online_book_ticket.Models
         [DataType(DataType.Date)]
         public DateTime? CancellationDateTime { get; set; }
 
-        public virtual Customers Customers { get; set; }
+        public virtual Customers? Customers { get; set; }
 
-        public virtual Trips Buses { get; set; }
+        public virtual Trips? Buses { get; set; }
 
-        public virtual Accounts Accounts { get; set; }
+        public virtual Accounts? Accounts { get; set; }
     }
 }

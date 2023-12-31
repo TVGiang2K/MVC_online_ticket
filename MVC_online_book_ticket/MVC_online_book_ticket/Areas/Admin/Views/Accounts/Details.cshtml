@@ -12,91 +12,94 @@
 <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Account Detail</h5>
 
-                <dl class="row">
-                    <dt class="col-sm-2">
-                        Username
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Username)
-                    </dd>
-                    <dt class="col-sm-2">
-                        Name
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Name)
-                    </dd>
-                    <dt class="col-sm-2">
-                        Age
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Age
-                    </dd>
-                    <dt class="col-sm-2">
-                        Birthday
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Birthday
-                    </dd>
-                    <dt class="col-sm-2">
-                        Phone
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Phone
-                    </dd>
-                    <dt class="col-sm-2">
-                        Email
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Email
-                    </dd>
-                    <dt class="col-sm-2">
-                        Gender
-                    </dt>
-                    <dd class="col-sm-10">
-                        @if (ac.Gender == true)
-                        {
-                            <span>Man</span>
-                        }
-                        else
-                        {
-                            <span>Woman</span>
-                        }
-                    </dd>
-                    <dt class="col-sm-2">
-                        Avatar
-                    </dt>
-                    <dd class="col-sm-10">
-                        <img src="/img/@ac.Avatar" alt="@ac.Avatar" width="100" />
-                    </dd>
-                    <dt class="col-sm-2">
-                        Qualification
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Qualification
-                    </dd>
-                    <dt class="col-sm-2">
-                        Position
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Position
-                    </dd>
-                    <dt class="col-sm-2">
-                        Role
-                    </dt>
-                    <dd class="col-sm-10">
-                        @ac.Role
-                    </dd>
-                </dl>
-                <div class="row">
-                    <div class="col-sm-2 col-xl-2 mx-2 ">
-                    <a asp-action="Edit" asp-route-id="@ac.AccountsId" class=" d-flex btn btn-outline-link m-1 btn btn-primary">Edit</a> 
-                    </div>
-                <div class="col-sm-2 col-xl-2 mx-2 ">
-                        <a asp-action="Index" class="d-flex btn btn-outline-link m-1 btn btn-warning">Back to list</a>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <h3 >Account Detail</h3>
+                </div>
+                <div class="col-md-6 my-2">
+                    <a asp-action="Edit" asp-route-id="@ac.AccountsId" class="btn btn-primary mx-2">Edit</a>
+                    <a asp-action="Index" class="btn btn-warning mx-2">Back to list</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="/img/accounts/@ac.Avatar" alt="@ac.Avatar" class="card-img-top" width="100%" />
+                        <div class="card-body">
+                            <h5 class="card-title">Name</h5>
+                            <p class="card-text">
+                                @ac.Name
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Age</h5>
+                            <p class="card-text">
+                                @ac.Age
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Birthday</h5>
+                            <p class="card-text">
+                                @ac.Birthday
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Gender</h5>
+                            <p class="card-text">
+                                @if (ac.Gender == true)
+                                {
+                                    <span>Man</span>
+                                }
+                                else
+                                {
+                                    <span>Woman</span>
+                                }
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Username</h5>
+                            <p class="card-text">
+                                @ac.Username
+                            </p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Phone</h5>
+                            <p class="card-text">
+                                @ac.Phone
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Email</h5>
+                            <p class="card-text">
+                                @ac.Email
+                            </p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Qualification</h5>
+                            <p class="card-text">
+                                @ac.Qualification
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Position</h5>
+                            <p class="card-text">
+                                @ac.Position
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Role</h5>
+                            <p class="card-text">
+                                @ac.Role
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>

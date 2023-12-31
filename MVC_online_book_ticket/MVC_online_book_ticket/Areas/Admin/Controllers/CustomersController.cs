@@ -10,7 +10,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
-    public class CustomersController : Controller
+    public class CustomersController : AdminBaseController
 	{
         private readonly AppDbContext _context;
 

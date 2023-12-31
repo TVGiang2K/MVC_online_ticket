@@ -76,20 +76,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Login/ChangePassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cQ2hhbmdlUGFzc3dvcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Login/ForgetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cRm9yZ2V0UGFzc3dvcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Shared/_Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/_ViewImports.cshtml]
