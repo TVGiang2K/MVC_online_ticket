@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MVC_online_book_ticket.Controllers
 {
-	public class ReservationsController : Controller
+	public class ReservationsController : EmployeesBaseController
 	{
 		// GET: ReservationsController
 		public ActionResult Index()

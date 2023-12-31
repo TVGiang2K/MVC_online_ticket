@@ -148,12 +148,6 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         {
             var acc = await _context.Accounts.FirstOrDefaultAsync(m => m.AccountsId == id);
 
-            if (id  != accounts.AccountsId)
-            {
-                ViewBag.error = "Error: Unable to update new Account";
-                return View(accounts);
-            }
-
             if (ModelState.IsValid)
             {
                 try
@@ -201,7 +195,7 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                     }
                     else
                     {
-                        ViewBag.error = "Error: Unable to update new Account";
+                        ViewBag.error = "Error: Unable to update a Account";
                         return View(accounts);
                     }
                 }

@@ -1,14 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient.Server;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MVC_online_book_ticket.Common;
 using MVC_online_book_ticket.Data;
 using MVC_online_book_ticket.Models;
 using MVC_online_book_ticket.Models.DTOs;
+using System.Drawing;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MVC_online_book_ticket.Controllers
 {
@@ -30,28 +34,28 @@ namespace MVC_online_book_ticket.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(AuthenticationDTO model)
+        public async Task<IActionResult> Index([Bind("Username,Password")] AuthenticationDTO model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
-            }
-            else
-            {
-                var checkAccount = _context.Accounts.FirstOrDefault(a => a.Username == model.Username);
+			}
+			else
+			{
+                var checkAccount = await _context.Accounts.FirstOrDefaultAsync(a => a.Username == model.Username);
                 if (checkAccount != null && _hashPassword.VerifyPassword(model.Password, checkAccount.Password) && checkAccount.Role == Role.Employees)
                 {
                     var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
-                    HttpContext.Session.SetString("LoginToken", token);
+                    HttpContext.Session.SetString("EmployeesLoginToken", token);
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    ModelState.AddModelError("", " Invalid username or password");
-                }
+					ViewBag.error = "Error: Invalid username or password";
+					return View(model);
+				}
 
             }
-            return View();
         }
 
 
@@ -90,33 +94,94 @@ namespace MVC_online_book_ticket.Controllers
         }
 
         [HttpPost]
-        public IActionResult ForgetPassword(string phone)
+        public async Task<IActionResult> ForgetPassword([Bind("Email")] ForgetPasswordDTO model)
         {
-            if (phone == null)
+            if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", "Phone is required");
+				return View(model);
             }
-            else
+			else
             {
-                var checkAccount = _context.Accounts.FirstOrDefault(a => a.Phone == phone);
+			
+				var checkAccount = await _context.Accounts.FirstOrDefaultAsync(a => a.Email == model.Email && a.Role != Role.Administrator);
                 if (checkAccount != null)
                 {
-                    return RedirectToAction("ChangePassword", "Login");
-                }
+					return RedirectToAction("ChangePassword", new { id = checkAccount.AccountsId });
+				}
                 else
                 {
-                    ModelState.AddModelError("", " Invalid phone");
-                }
+					ViewBag.error = "Error: Your Email is not in the system";
+					return View(model);
+				}
             }
-            return View();
         }
 
-        public IActionResult ChangePassword()
+        public async Task<IActionResult> ChangePassword(int? id)
         {
-            return View();
+			if (id == null || _context.Accounts == null)
+			{
+				return NotFound();
+			}
+			var accounts = await _context.Accounts.FindAsync(id);
+			if (accounts == null)
+			{
+				return NotFound();
+			}
+			ViewData["Id"] = id;
+			return View();
         }
 
-        [HttpGet]
+		[HttpPost]
+		public async Task<IActionResult> ChangePassword(int id, [Bind("AccountsId,NewPassword,ConfirmPassword")] ChangePasswordDTO model)
+		{
+
+			if (id != model.AccountsId)
+			{
+				ViewBag.error = "Error: Account not found";
+				return View();
+			}
+			
+
+			if (ModelState.IsValid)
+			{
+				try
+				{
+					var acc = await _context.Accounts.FindAsync(id);
+
+					if (acc == null)
+					{
+						ViewBag.error = "Error: Account not found";
+						ViewData["Id"] = id;
+						return View();
+					}
+
+					if (!string.Equals(model.NewPassword, model.ConfirmPassword, StringComparison.Ordinal))
+                    {
+						ViewBag.error = "Error: passwords do not match";
+						ViewData["Id"] = id;
+						return View();
+					}
+
+					acc.Password = _hashPassword.SetPassword(model.ConfirmPassword);
+
+					_context.Update(acc);
+					await _context.SaveChangesAsync();
+					TempData["success"] = "Change Password successfully!";
+					return RedirectToAction(nameof(Index));
+				}
+				catch (DbUpdateConcurrencyException)
+				{
+					ViewBag.error = "Change Password failed!";
+					return RedirectToAction(nameof(Index));
+				}
+			}
+			ViewData["Id"] = id;
+			return View();
+		}
+
+
+
+		[HttpGet]
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("LoginToken");

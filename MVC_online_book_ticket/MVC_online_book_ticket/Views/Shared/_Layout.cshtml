@@ -21,6 +21,7 @@
 
     <!-- Custom CSS -->
     <link href="~/assets/css/style.css" rel="stylesheet" asp-append-version="true">
+	@RenderSection("Css", required: false)
 </head>
 <body>
 	<div id="main-wrapper">
@@ -59,7 +60,7 @@
 							<li><a asp-area="" asp-controller="Reservations" asp-action="Index"><i class="fa-solid fa-jet-fighter me-2"></i>Reservations</a></li>
 							<li><a href="home-hotel.html"><i class="fa-solid fa-spa me-2"></i>Hotels</a></li>
 							<li><a href="home-rental.html"><i class="fa-solid fa-house-circle-check me-2"></i>Rental</a></li>
-							<li><a asp-area="Admin" asp-controller="Login" asp-action="Index"><i class="fa-solid fa-car me-2"></i>Login</a></li>
+							<li><a asp-area="" asp-controller="Login" asp-action="Index"><i class="fa-solid fa-car me-2"></i>Login</a></li>
 
 						</ul>
 
