@@ -34,7 +34,7 @@ namespace MVC_online_book_ticket.Data
             );
 
 
-            modelBuilder.Entity<Accounts>()
+			modelBuilder.Entity<Accounts>()
             .HasIndex(e => e.Email)
             .IsUnique();
 
@@ -51,6 +51,9 @@ namespace MVC_online_book_ticket.Data
             .HasIndex(e => e.BusNumber)
             .IsUnique();
 
+			modelBuilder.Entity<Agencies>()
+			.HasIndex(e => e.Phone)
+			.IsUnique();
         }
 
         public DbSet<Accounts> Accounts { get; set; }
@@ -59,6 +62,7 @@ namespace MVC_online_book_ticket.Data
         public DbSet<Trips> Trips { get; set; }
         public DbSet<Financials> Financials { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
+        public DbSet<Agencies> Agencies { get; set; }
 
 
     }

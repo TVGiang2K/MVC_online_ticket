@@ -1,242 +1,92 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model MVC_online_book_ticket.Models.Customers
 @{
+	ViewData["Title"] = "Create";
+	var er = ViewBag.error;
+
 }
 <!-- ============================ Booking Page ================================== -->
 <section class="pt-5 gray-simple position-relative">
 	<div class="container">
 
-		<div class="row align-items-center justify-content-center">
-			<div class="col-xl-12 col-lg-12 col-md-12 mb-4">
-				<button class="btn btn-dark fw-medium full-width d-block d-lg-none" data-bs-toggle="offcanvas"
-						data-bs-target="#offcanvasDashboard" aria-controls="offcanvasDashboard">
-					<i class="fa-solid fa-gauge me-2"></i>Dashboard
-					Navigation
-				</button>
-				<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-					 id="offcanvasDashboard" aria-labelledby="offcanvasScrollingLabel">
-					<div class="offcanvas-header gray-simple">
-						<h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-					</div>
-					<div class="offcanvas-body p-0">
-						<ul class="user-Dashboard-longmenu">
-							<li><a href="my-profile.html"><i class="fa-regular fa-id-card me-2"></i>My Profile</a></li>
-							<li>
-								<a href="my-booking.html"><i class="fa-solid fa-ticket me-2"></i>My Booking</a>
-							</li>
-							<li class="active">
-								<a href="travelers.html"><i class="fa-solid fa-user-group me-2"></i>Travelers</a>
-							</li>
-							<li><a href="payment-detail.html"><i class="fa-solid fa-wallet me-2"></i>Payment Details</a></li>
-							<li><a href="my-wishlists.html"><i class="fa-solid fa-shield-heart me-2"></i>My Wishlist</a></li>
-							<li><a href="settings.html"><i class="fa-solid fa-sliders me-2"></i>Settings</a></li>
-							<li><a href="delete-account.html"><i class="fa-solid fa-trash-can me-2"></i>Delete Profile</a></li>
-							<li><a href="login.html"><i class="fa-solid fa-power-off me-2"></i>Sign Out</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
+		
 		<div class="row align-items-start justify-content-between gx-xl-4">
 
-			<div class="col-xl-4 col-lg-4 col-md-12">
-				<div class="card rounded-2 me-xl-5 mb-4">
-					<div class="card-top bg-primary position-relative">
-						<div class="position-absolute end-0 top-0 mt-4 me-3">
-							<a href="login.html"
-							   class="square--40 circle bg-light-dark text-light">
-								<i class="fa-solid fa-right-from-bracket"></i>
-							</a>
-						</div>
-						<div class="py-5 px-3">
-							<div class="crd-thumbimg text-center">
-								<div class="p-2 d-flex align-items-center justify-content-center brd">
-									<img src="assets/img/team-1.jpg"
-										 class="img-fluid circle" width="120" alt="">
-								</div>
-							</div>
-							<div class="crd-capser text-center">
-								<h5 class="mb-0 text-light fw-semibold">Adam K. Divliars</h5>
-								<span class="text-light opacity-75 fw-medium text-md">
-									<i class="fa-solid fa-location-dot me-2"></i>California, USA
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="card-middle px-4 py-5">
-						<div class="crdapproval-groups">
-
-							<div class="crdapproval-single d-flex align-items-center justify-content-start mb-4">
-								<div class="crdapproval-item">
-									<div class="square--50 circle bg-light-success text-success">
-										<i class="fa-solid fa-envelope-circle-check fs-5"></i>
-									</div>
-								</div>
-								<div class="crdapproval-caps ps-2">
-									<p class="fw-semibold text-dark lh-2 mb-0">Verified Email</p>
-									<p class="text-md text-muted lh-1 mb-0">10 Aug 2022</p>
-								</div>
-							</div>
-
-							<div class="crdapproval-single d-flex align-items-center justify-content-start mb-4">
-								<div class="crdapproval-item">
-									<div class="square--50 circle bg-light-success text-success">
-										<i class="fa-solid fa-phone-volume fs-5"></i>
-									</div>
-								</div>
-								<div class="crdapproval-caps ps-2">
-									<p class="fw-semibold text-dark lh-2 mb-0">Verified Mobile Number</p>
-									<p class="text-md text-muted lh-1 mb-0">12 Aug 2022</p>
-								</div>
-							</div>
-
-							<div class="crdapproval-single d-flex align-items-center justify-content-start">
-								<div class="crdapproval-item">
-									<div class="square--50 circle bg-light-warning text-warning">
-										<i class="fa-solid fa-file-invoice fs-5"></i>
-									</div>
-								</div>
-								<div class="crdapproval-caps ps-2">
-									<p class="fw-semibold text-dark lh-2 mb-0">Complete Basic Info</p>
-									<p class="text-md text-muted lh-1 mb-0">Not Verified</p>
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="card-middle mt-5 mb-4 px-4">
-						<div class="revs-wraps mb-3">
-							<div class="revs-wraps-flex d-flex align-items-center justify-content-between mb-1">
-								<span class="text-dark fw-semibold text-md">Complete Your Profile</span>
-								<span class="text-dark fw-semibold text-md">75%</span>
-							</div>
-							<div class="progress " role="progressbar" aria-label="Example" aria-valuenow="87" aria-valuemin="0"
-								 aria-valuemax="100" style="height: 7px">
-								<div class="progress-bar bg-success" style="width: 87%"></div>
-							</div>
-						</div>
-						<div class="crd-upgrades">
-							<button class="btn btn-light-primary fw-medium full-width rounded-2" type="button">
-								<i class="fa-solid fa-sun me-2"></i>Upgrade Pro
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-xl-8 col-lg-8 col-md-12">
+			<div class="col-xl-12 col-lg-12 col-md-12">
 
 				<!-- Personal Information -->
 				<div class="card">
 					<div class="card-header">
-						<h4><i class="fa-solid fa-user-group me-2"></i>Travelers Details</h4>
+						<h4><i class="fa-solid fa-user-group me-2"></i>Create Customer</h4>
 					</div>
+
+					<h3 style="color:red"><span class="text-danger">@er</span></h3>
+					<form asp-action="Create">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 					<div class="card-body gap-4">
 
 						<!-- Single Item -->
 						<div class="card">
-							<div class="card-header px-0 border-0">
-								<div class="d-flex align-items-center justify-content-start">
-									<div class="avatar avatar-md me-2">
-										<img src="assets/img/team-3.jpg" class="img-fluid circle" alt="">
-									</div>
-									<h6 class="mb-0">Daniel Deukoza</h6>
-								</div>
-								<div class="crd-remove"><a href="#" class="nav-link fw-medium text-primary text-sm">Remove</a></div>
-							</div>
 							<div class="card-body px-0">
 								<div class="row align-items-center">
 
 									<div class="col-xl-6 col-lg-6 col-md-6">
 										<div class="form-group">
-											<label class="form-label">First Name</label>
-											<input type="text" class="form-control" value="Daniel">
+												<label asp-for="Name" class="form-label"></label>
+												<input asp-for="Name" type="text" class="form-control">
+												<span asp-validation-for="Name" class="form-text text-danger"></span>
+
 										</div>
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-md-6">
 										<div class="form-group">
-											<label class="form-label">Last Name</label>
-											<input type="text" class="form-control" value="Duekoza">
+												<label asp-for="Phone" class="form-label"></label>
+												<input asp-for="Phone" type="text" class="form-control">
+												<span asp-validation-for="Phone" class="form-text text-danger"></span>
 										</div>
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-md-6">
 										<div class="form-group">
-											<label class="form-label">Mobile No.</label>
-											<input type="text" class="form-control" value="Daniel Duekoza">
+												<label asp-for="Age" class="form-label"></label>
+												<input asp-for="Age"  class="form-control">
+												<span asp-validation-for="Age" class="form-text text-danger"></span>
 										</div>
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-md-6">
 										<div class="form-group">
-											<label class="form-label">Date of Birth</label>
-											<input type="text" class="form-control birth" value="">
+												<label asp-for="Birthday" class="form-label"></label>
+												<input asp-for="Birthday" class="form-control">
+												<span asp-validation-for="Birthday" class="form-text text-danger"></span>
 										</div>
 									</div>
-
+										<div class="col-xl-6 col-lg-6 col-md-6">
+											<div class="form-group">
+												<label asp-for="Gender" class="form-label"></label></b>
+												<div class="radio inlineblock m-r-20">
+													<input asp-for="Gender" type="radio" id="M" class="with-gap" value="true" checked>
+													<label for="M">Man</label>
+												</div>
+												<div class="radio inlineblock">
+													<input asp-for="Gender" type="radio" id="W" class="with-gap" value="false">
+													<label for="W">Woman</label>
+												</div>
+											</div>
+										</div>
 								</div>
 							</div>
 						</div>
 
 						<hr>
-
-						<!-- Single Item -->
-						<div class="card">
-							<div class="card-header px-0 border-0">
-								<div class="d-flex align-items-center justify-content-start">
-									<div class="avatar avatar-md me-2">
-										<img src="assets/img/team-6.jpg" class="img-fluid circle" alt="">
-									</div>
-									<h6 class="mb-0">Daniel Deukoza</h6>
-								</div>
-								<div class="crd-remove"><a href="#" class="nav-link fw-medium text-primary text-sm">Remove</a></div>
-							</div>
-							<div class="card-body px-0">
-								<div class="row align-items-center">
-
-									<div class="col-xl-6 col-lg-6 col-md-6">
-										<div class="form-group">
-											<label class="form-label">First Name</label>
-											<input type="text" class="form-control" value="Daniel">
-										</div>
-									</div>
-
-									<div class="col-xl-6 col-lg-6 col-md-6">
-										<div class="form-group">
-											<label class="form-label">Last Name</label>
-											<input type="text" class="form-control" value="Duekoza">
-										</div>
-									</div>
-
-									<div class="col-xl-6 col-lg-6 col-md-6">
-										<div class="form-group">
-											<label class="form-label">Mobile No.</label>
-											<input type="text" class="form-control" value="Daniel Duekoza">
-										</div>
-									</div>
-
-									<div class="col-xl-6 col-lg-6 col-md-6">
-										<div class="form-group">
-											<label class="form-label">Date of Birth</label>
-											<input type="text" class="form-control birth" value="">
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
 						<div class="text-end">
-							<button type="button" class="btn btn-md btn-primary fw-medium">Add New Travellers</button>
+								<button type="submit" class="btn btn-md btn-primary fw-medium">Save</button>
+								<a asp-action="Index" class="btn btn-md fw-mediumbtn btn-warning">Back to list</a>
 						</div>
 
 					</div>
+					</form>
+
 				</div>
 
 			</div>

@@ -52,5 +52,30 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
 
             return View(reservations);
         }
-    }
+		public async Task<IActionResult> Delete(int id)
+		{
+			if (_context.Customers == null)
+			{
+				return Problem("Entity set 'AppDbContext.Customers'  is null.");
+			}
+			try
+			{
+				var customer = await _context.Customers.FindAsync(id);
+				if (customer != null)
+				{
+					_context.Customers.Remove(customer);
+					await _context.SaveChangesAsync();
+					TempData["success"] = "Delete successfully!";
+				}
+
+			}
+			catch
+			{
+				TempData["error"] = "Delete failed!";
+
+			}
+
+			return RedirectToAction(nameof(Index));
+		}
+	}
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SQz4dtXCeTeVi4Z0OaQY0a1UDOblbaA6GooouBmd6LQ=",
+  "Hash": "CG18yv2jNlNjzzuzvAIQ4CVY2d5R4DvZL64EefgYKqI=",
   "Source": "MVC_online_book_ticket",
   "BasePath": "_content/MVC_online_book_ticket",
   "Mode": "Default",
@@ -14091,6 +14091,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\accounts\\20231231142912_3ccfcc24.jpg"
+    },
+    {
+      "Identity": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\wwwroot\\img\\accounts\\20240102021455_b4cd65d1.jpg",
+      "SourceId": "MVC_online_book_ticket",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\wwwroot\\",
+      "BasePath": "_content/MVC_online_book_ticket",
+      "RelativePath": "img/accounts/20240102021455_b4cd65d1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\accounts\\20240102021455_b4cd65d1.jpg"
     },
     {
       "Identity": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\wwwroot\\img\\accounts\\user-1.jpg",
