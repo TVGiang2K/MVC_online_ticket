@@ -281,3 +281,4 @@ G:\SemIII\eProject\Project\NewPro\MVC_online_book_ticket\MVC_online_book_ticket\
 G:\SemIII\eProject\Project\NewPro\MVC_online_book_ticket\MVC_online_book_ticket\bin\Debug\net6.0\X.PagedList.dll
 G:\SemIII\eProject\Project\NewPro\MVC_online_book_ticket\MVC_online_book_ticket\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
 G:\SemIII\eProject\Project\NewPro\MVC_online_book_ticket\MVC_online_book_ticket\obj\Debug\net6.0\MVC_online_book_ticket.MvcApplicationPartsAssemblyInfo.cs
+G:\SemIII\eProject\Project\NewPro\MVC_online_book_ticket\MVC_online_book_ticket\bin\Debug\net6.0\X.PagedList.Web.Common.dll

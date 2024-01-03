@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T9l91mc2wRLXW7u3Z8EvCD1pnR/J9Kz488EFByMcUrgDlXKLOnvMljLt7iO9u1DNI3FTX6Agq/wShnfC5IuioA==",
+  "dgSpecHash": "XmgfPY5dXHWp06eXCU00LYvNeqhgWC0tOSqd3DPt+UzIcRPFw+vlnXjLGlXEYSw3wJDVBAk4+ckTEbhJrPZ/Ow==",
   "success": true,
   "projectFilePath": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
   "expectedPackageFiles": [
@@ -231,7 +231,8 @@
     "C:\\Users\\DELL\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\x.pagedlist\\9.0.0-prerelease\\x.pagedlist.9.0.0-prerelease.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\x.pagedlist.mvc.core\\9.0.0-prerelease\\x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512"
+    "C:\\Users\\DELL\\.nuget\\packages\\x.pagedlist.mvc.core\\9.0.0-prerelease\\x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\x.pagedlist.web.common\\8.0.7\\x.pagedlist.web.common.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

@@ -40,7 +40,12 @@
                             <div class="col-lg-4 d-flex">
                                 <div class="mb-3">
                                     <label asp-for="Password" class="form-label"></label>
-                                    <input asp-for="Password" type="password" class="form-control" />
+                                    <div class="input-group">
+                                        <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1">
+                                        <span class="toggle-password input-group-text">
+                                            <i class="ti ti-eye"></i>
+                                        </span>
+                                    </div>
                                     <span class="text-danger">@erP</span>
                                 </div>
 
@@ -157,4 +162,15 @@
             preview.style.display = 'none';
         }
     }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.getElementById('exampleInputPassword1');
+            const togglePassword = document.querySelector('.toggle-password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                togglePassword.classList.toggle('fa-eye-slash');
+            });
+        });
 </script>

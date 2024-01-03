@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC_online_book_ticket.Data;
 using MVC_online_book_ticket.Models;
+using X.PagedList;
 
 namespace MVC_online_book_ticket.Areas.Admin.Controllers
 {
@@ -21,11 +23,16 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         }
 
         // GET: Admin/Agencies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name, int page = 1)
         {
-              return _context.Agencies != null ? 
-                          View(await _context.Agencies.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Agencies'  is null.");
+      
+            int limit = 5;
+            var agencies = await _context.Agencies.OrderBy(a => a.AgenciesId).ToPagedListAsync(page, limit);
+            if (!String.IsNullOrEmpty(name))
+            {
+                agencies = await _context.Agencies.Where(a => a.Address.Contains(name)).OrderBy(a => a.AgenciesId).ToPagedListAsync(page, limit);
+            }
+            return View(agencies);
         }
 
         // GET: Admin/Agencies/Details/5
@@ -61,9 +68,19 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(agencies);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _context.Add(agencies);
+                    await _context.SaveChangesAsync();
+                    TempData["success"] = "Add successfully!";
+                    return RedirectToAction(nameof(Index));
+
+                }
+                catch
+                {
+                    ViewBag.error = "Error: Unable to add new Agency";
+                    return View(agencies);
+                }
             }
             return View(agencies);
         }
@@ -102,57 +119,53 @@ namespace MVC_online_book_ticket.Areas.Admin.Controllers
                 {
                     _context.Update(agencies);
                     await _context.SaveChangesAsync();
+                    TempData["success"] = "Update successfully!";
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!AgenciesExists(agencies.AgenciesId))
                     {
-                        return NotFound();
+                        ViewBag.error = "Error: Agency not found";
+                        return View(agencies);
                     }
                     else
                     {
-                        throw;
+                        ViewBag.error = "Error: Unable to update Agency";
+                        return View(agencies);
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(agencies);
         }
 
-        // GET: Admin/Agencies/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Agencies == null)
-            {
-                return NotFound();
-            }
-
-            var agencies = await _context.Agencies
-                .FirstOrDefaultAsync(m => m.AgenciesId == id);
-            if (agencies == null)
-            {
-                return NotFound();
-            }
-
-            return View(agencies);
-        }
+        
 
         // POST: Admin/Agencies/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (_context.Agencies == null)
+
+            if (_context.Buses == null)
             {
                 return Problem("Entity set 'AppDbContext.Agencies'  is null.");
             }
-            var agencies = await _context.Agencies.FindAsync(id);
-            if (agencies != null)
+            try
             {
-                _context.Agencies.Remove(agencies);
+                var agencies = await _context.Agencies.FindAsync(id);
+                if (agencies != null)
+                {
+                    _context.Agencies.Remove(agencies);
+                    await _context.SaveChangesAsync();
+                    TempData["success"] = "Delete successfully!";
+                }
+
             }
-            
-            await _context.SaveChangesAsync();
+            catch
+            {
+                TempData["error"] = "Delete failed!";
+
+            }
+
             return RedirectToAction(nameof(Index));
         }
 

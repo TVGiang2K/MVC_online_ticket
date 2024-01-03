@@ -17,6 +17,7 @@ namespace MVC_online_book_ticket.Models
 
         [ForeignKey("AccountsId")]
         public int AccountsId { get; set; }
+        public double Vat { get; set; }
 
         public double TotalPrice { get; set; }
 
@@ -31,9 +32,10 @@ namespace MVC_online_book_ticket.Models
         [DataType(DataType.Date)]
         public DateTime? CancellationDateTime { get; set; }
 
+
         public virtual Customers? Customers { get; set; }
 
-        public virtual Trips? Buses { get; set; }
+        public virtual Trips? Trips { get; set; }
 
         public virtual Accounts? Accounts { get; set; }
     }

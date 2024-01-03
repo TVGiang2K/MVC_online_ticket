@@ -36,10 +36,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -148,12 +144,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/DetailsTrips.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzVHJpcHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/ListAgencies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0QWdlbmNpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/ChangePassword.cshtml]
@@ -166,6 +166,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/AddQuantityGuest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEFkZFF1YW50aXR5R3Vlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/ReservationsConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXFJlc2VydmF0aW9uc0NvbmZpcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/ReservationsDone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXFJlc2VydmF0aW9uc0RvbmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/SemIII/eProject/Project/NewPro/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/Error.cshtml]

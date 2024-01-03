@@ -4005,6 +4005,18 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "X.PagedList.Web.Common/8.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/X.PagedList.Web.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/X.PagedList.Web.Common.dll": {}
+        }
       }
     }
   },
@@ -11236,6 +11248,18 @@
         "x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512",
         "x.pagedlist.mvc.core.nuspec"
       ]
+    },
+    "X.PagedList.Web.Common/8.0.7": {
+      "sha512": "h03M+ZeaucubfLPlaKoFB/rxBxV17pddp3FVjwKO0QM47frt+QIIABHs2KB3Eay9Xc/sDPGvKkYsm0ZdUpF/lg==",
+      "type": "package",
+      "path": "x.pagedlist.web.common/8.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/X.PagedList.Web.Common.dll",
+        "x.pagedlist.web.common.8.0.7.nupkg.sha512",
+        "x.pagedlist.web.common.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -11249,7 +11273,8 @@
       "Microsoft.IdentityModel.Tokens >= 6.33.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
       "System.IdentityModel.Tokens.Jwt >= 6.33.0",
-      "X.PagedList.Mvc.Core >= 9.0.0-prerelease"
+      "X.PagedList.Mvc.Core >= 9.0.0-prerelease",
+      "X.PagedList.Web.Common >= 8.0.7"
     ]
   },
   "packageFolders": {
@@ -11339,6 +11364,10 @@
           "X.PagedList.Mvc.Core": {
             "target": "Package",
             "version": "[9.0.0-prerelease, )"
+          },
+          "X.PagedList.Web.Common": {
+            "target": "Package",
+            "version": "[8.0.7, )"
           }
         },
         "imports": [

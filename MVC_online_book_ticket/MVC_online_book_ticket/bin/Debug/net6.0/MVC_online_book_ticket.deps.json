@@ -17,7 +17,8 @@
           "Microsoft.IdentityModel.Tokens": "6.33.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
           "System.IdentityModel.Tokens.Jwt": "6.33.0",
-          "X.PagedList.Mvc.Core": "9.0.0-prerelease"
+          "X.PagedList.Mvc.Core": "9.0.0-prerelease",
+          "X.PagedList.Web.Common": "8.0.7"
         },
         "runtime": {
           "MVC_online_book_ticket.dll": {}
@@ -2716,6 +2717,17 @@
             "fileVersion": "9.0.0.0"
           }
         }
+      },
+      "X.PagedList.Web.Common/8.0.7": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/X.PagedList.Web.Common.dll": {
+            "assemblyVersion": "8.0.7.0",
+            "fileVersion": "8.0.7.0"
+          }
+        }
       }
     }
   },
@@ -4320,6 +4332,13 @@
       "sha512": "sha512-ixEd88gKHjHW1UJn9fmxcPr0bGx4iQXKhXyZ1chBpLPAWbcjZxAD0+F2U2hF5dGQGG/+0Ugs1B/C6m/7pzrJZA==",
       "path": "x.pagedlist.mvc.core/9.0.0-prerelease",
       "hashPath": "x.pagedlist.mvc.core.9.0.0-prerelease.nupkg.sha512"
+    },
+    "X.PagedList.Web.Common/8.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h03M+ZeaucubfLPlaKoFB/rxBxV17pddp3FVjwKO0QM47frt+QIIABHs2KB3Eay9Xc/sDPGvKkYsm0ZdUpF/lg==",
+      "path": "x.pagedlist.web.common/8.0.7",
+      "hashPath": "x.pagedlist.web.common.8.0.7.nupkg.sha512"
     }
   }
 }

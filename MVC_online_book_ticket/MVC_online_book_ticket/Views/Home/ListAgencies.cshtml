@@ -1,0 +1,106 @@
+﻿@model X.PagedList.IPagedList<MVC_online_book_ticket.Models.Agencies>
+@using X.PagedList.Mvc.Core;
+@{
+    var pageSize = Model.PageSize;
+    var currentPage = Model.PageNumber;
+    var indexStart = (currentPage - 1) * pageSize + 1;
+    ViewData["Title"] = "ListAgencies";
+}
+
+<div class="py-5 bg-primary position-relative">
+    <div class="container">
+        <!-- Search Form -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+				<div class="calltoAction-title mb-5">
+					<h4 class="text-light fs-2 fw-bold lh-base m-0">
+					Please come to our branches for assistance with ticket booking.<br>Below is a list of our express branches
+					</h4>
+				</div>
+            <div class="search-wrap bg-white rounded-3 p-3">
+
+				<div class="newsletter-forms mt-md-0 mt-4">
+					<form action="" method="get">
+						<div class="row align-items-center justify-content-between bg-white rounded-3 p-2 gx-0">
+
+							<div class="col-xl-9 col-lg-8 col-md-8">
+								<div class="form-group m-0">
+									<input type="text" name="name" class="form-control bold ps-1 border-0" placeholder="Enter Your Address!">
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-4 col-md-4">
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary fw-medium full-width">
+										Search<i class="fa-solid fa-arrow-trend-up ms-2"></i>
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</form>
+				</div>
+            </div>
+        </div>
+
+        <!-- </row> -->
+
+    </div>
+</div>
+<!-- ============================ Hero Banner End ================================== -->
+<!-- ============================ Booking Page ================================== -->
+
+<!-- ============================ Popular Attraction Start ================================== -->
+<section>
+	<div class="container">
+
+		<div class="row align-items-center justify-content-center">
+			<div class="col-xl-8 col-lg-9 col-md-11 col-sm-12">
+				<div class="secHeading-wrap text-center mb-5">
+					<h2 style ="color:red">@TempData["error"]</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- ============================ Popular Attraction Start ================================== -->
+
+<section class="pt-5 gray-simple position-relative">
+	<div class="container">
+		
+				<!-- Personal Information -->
+				<div class="card mb-4">
+					<div class="card-header">
+						<h4><i class="fa-solid fa-file-invoice-dollar me-2"></i>List Agencies</h4>
+					</div>
+					<div class="card-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Address)</th>
+									<th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Phone)</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+                            {
+								<tr>
+									<th>02</th>
+								<td><span class="text-md fw-medium text-dark">@Html.DisplayFor(modelItem => item.Address)</span></td>
+								<td><span class="badge bg-light-warning text-warning fw-medium text-uppercase">@Html.DisplayFor(modelItem => item.Phone)</span></td>
+								</tr>
+							}
+							</tbody>
+						</table>
+				@Html.PagedListPager(Model, page => Url.Action("ListAgencies", new { page = page }),    new PagedListRenderOptions
+						{
+							LiElementClasses = new string[] { "page-item" },
+							PageClasses = new string[] { "page-link" }
+							}
+						)
+					</div>
+				</div>
+
+			
+	</div>
+</section>
+<!-- ============================ Booking Page End ================================== -->

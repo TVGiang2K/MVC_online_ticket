@@ -87,6 +87,10 @@
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[9.0.0-prerelease, )"
+            },
+            "X.PagedList.Web.Common": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             }
           },
           "imports": [

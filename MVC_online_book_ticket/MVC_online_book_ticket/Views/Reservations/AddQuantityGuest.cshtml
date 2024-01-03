@@ -1,0 +1,108 @@
+﻿@model IEnumerable<MVC_online_book_ticket.Models.Customers>;
+@{
+    var indexStart = 1;
+    var idTrip = ViewBag.idTrip;
+}
+
+<!-- ============================ Booking Page ================================== -->
+<!-- ============================ Booking Page End ================================== -->
+<section class="pt-5 gray-simple position-relative">
+    <div class="container">
+
+
+        <div class="row align-items-start justify-content-between gx-xl-4">
+
+            <div class="col-xl-12 col-lg-12 col-md-12">
+
+                <!-- Personal Information -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fa-solid fa-user-group me-2"></i>Search Customer</h4>
+
+                    </div>
+                </div>
+                <div class="card-body gap-4">
+
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="card-body px-0">
+                                    <form action="" method="get">
+
+                                        <div class="row align-items-center">
+
+                                            <div class="col-xl-6 col-lg-6 col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control" placeholder="Input Name or Phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-2">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-md btn-warning fw-medium">Search Name </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Item -->
+
+
+                    </div>
+                    <!-- Personal Information -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4><i class="fa-solid fa-file-invoice-dollar me-2"></i>List Customer By Search</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+                                        <th scope="col">@Html.DisplayNameFor(model => model.Phone)</th>
+                                        <th scope="col">@Html.DisplayNameFor(model => model.Age)</th>
+                                        @* <th scope="col">@Html.DisplayNameFor(model => model.Birthday)</th> *@
+                                        <th scope="col"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th>
+                                                @indexStart
+                                            </th>
+                                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                                            @* <td>@Html.DisplayFor(modelItem => item.Birthday)</td> *@
+                                            <td>
+                                                <a asp-action="ReservationsConfirm" asp-route-idCus="@item.CustomersId" asp-route-id="@idTrip" class="badge bg-success rounded-3 fw-semibold">Reservation</a>
+                                            </td>
+                                        </tr>
+                                        indexStart++;
+                                    }
+                                </tbody>
+                            </table>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="text-center d-flex align-items-center justify-content-center mt-4">
+                            <a asp-area="" asp-controller="Home" asp-action="DetailsTrips" asp-route-id="@idTrip" class="btn btn-md btn-dark fw-semibold mx-2">
+                                <i class="fa-solid fa-arrow-left me-2"></i>Previous
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ============================ Booking Page End ================================== -->
