@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using MVC_online_book_ticket.Common;
@@ -44,6 +45,7 @@ builder.Services.AddSession(ops =>
 	ops.Cookie.Name = ".MVC_online_book_ticket.Session";
 	ops.Cookie.HttpOnly = true;
 });
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<HashPassword>();
 var app = builder.Build();
 

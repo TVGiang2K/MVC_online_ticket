@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -58,7 +60,7 @@
 
 							<li class="active"><a href="home-stay.html"><i class="fa-solid fa-umbrella-beach me-2"></i>Stays</a></li>
 							<li><a asp-area="" asp-controller="Customers" asp-action="Index"><i class="fa-solid fa-jet-fighter me-2"></i>Customers</a></li>
-							<li><a href="home-hotel.html"><i class="fa-solid fa-spa me-2"></i>Hotels</a></li>
+							<li><a href="home-hotel.html"><i class="fa-solid fa-spa me-2"></i>@HttpContextAccessor.HttpContext.Session.GetString("EmployeeId")</a></li>
 							<li><a href="home-rental.html"><i class="fa-solid fa-house-circle-check me-2"></i>Rental</a></li>
 
 						</ul>

@@ -47,6 +47,7 @@ namespace MVC_online_book_ticket.Controllers
                 {
                     var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
                     HttpContext.Session.SetString("EmployeesLoginToken", token);
+                    HttpContext.Session.SetString("EmployeeId", checkAccount.AccountsId.ToString());
                     return RedirectToAction("Index", "Home");
                 }
                 else
