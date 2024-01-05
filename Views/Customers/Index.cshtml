@@ -1,0 +1,122 @@
+﻿@model X.PagedList.IPagedList<MVC_online_book_ticket.Models.Customers>
+@using X.PagedList.Mvc.Core;
+@{
+	var pageSize = Model.PageSize;
+	var currentPage = Model.PageNumber;
+	var indexStart = (currentPage - 1) * pageSize + 1;
+	ViewData["Title"] = "Customers page";
+
+}
+<!-- ============================ Booking Page ================================== -->
+<section class="pt-5 gray-simple position-relative">
+	<div class="container">
+
+	
+		<div class="row align-items-start justify-content-between gx-xl-4">
+
+			<div class="col-xl-12 col-lg-12 col-md-12">
+
+				<!-- Personal Information -->
+				<div class="card">
+							<div class="card-header">
+								<h4><i class="fa-solid fa-user-group me-2"></i>Search Customer</h4>
+									
+								</div>
+							</div>
+					<div class="card-body gap-4">
+						<!-- Single Item -->
+						<div class="card">
+							
+							<div class="card-body px-0">
+								<form action="" method="get">
+
+								<div class="row align-items-center">
+
+									<div class="col-xl-4 col-lg-4 col-md-4">
+										<div class="form-group">
+											<input type="text" name="name" class="form-control" placeholder="Input Name or Phone">
+										</div>
+									</div>
+									<div class="col-xl-2 col-lg-2 col-md-2">
+										<div class="form-group">
+										<button type="submit" class="btn btn-md btn-warning fw-medium">Search Name </button>
+										</div>
+
+									</div>
+								</div>
+								</form>
+
+							</div>
+						<div class="card-body px-0">
+							<div class="row align-items-center">
+
+								<div class="col-xl-4 col-lg-4 col-md-4">
+									<a asp-action="Create" class="d-flex btn btn-outline-link m-1 btn btn-primary">Add a Customer</a>
+
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4">
+									<h4 style="color:green">@TempData["success"]</h4>
+									<h4 style="color:red">@TempData["error"]</h4>
+
+								</div>
+							</div>
+							
+						</div>
+
+						</div>
+					</div>
+					<!-- Personal Information -->
+					<div class="card mb-4">
+						<div class="card-header">
+							<h4><i class="fa-solid fa-file-invoice-dollar me-2"></i>List Customer By Search</h4>
+						</div>
+						<div class="card-body">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Name)</th>
+										<th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Phone)</th>
+										<th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Age)</th>
+										<th scope="col">@Html.DisplayNameFor(model => model.FirstOrDefault().Birthday)</th>
+										<th scope ="col"> </th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+									<tr>
+										<th>
+											@indexStart
+										</th>
+										<td>@Html.DisplayFor(modelItem => item.Name)</td>
+										<td>@Html.DisplayFor(modelItem => item.Phone)</td>
+										<td>@Html.DisplayFor(modelItem => item.Age)</td>
+										<td>@Html.DisplayFor(modelItem => item.Birthday)</td>
+										<td>
+											<a asp-action="Details" asp-route-id="@item.CustomersId" class="badge bg-success rounded-3 fw-semibold">Detail</a>|
+											<a asp-action="Edit" asp-route-id="@item.CustomersId" class="badge bg-primary rounded-3 fw-semibold">Edit</a>
+											</td>
+									</tr>
+										indexStart++;
+									}
+								</tbody>
+							</table>
+							<br />
+							@Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),    new PagedListRenderOptions
+							{
+								LiElementClasses = new string[] { "page-item" },
+								PageClasses = new string[] { "page-link" }
+								}
+							)
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- ============================ Booking Page End ================================== -->

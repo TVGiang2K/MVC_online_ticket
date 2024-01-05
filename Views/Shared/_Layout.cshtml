@@ -1,0 +1,318 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVC_online_book_ticket</title>
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/animation.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/dropzone.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/flatpickr.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/flickity.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/lightbox.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/magnifypopup.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/select2.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/rangeSlider.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/prism.css" rel="stylesheet" asp-append-version="true">
+
+    <!-- Fontawesome & Bootstrap Icons CSS -->
+    <link href="~/assets/css/bootstrap-icons.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/css/fontawesome.css" rel="stylesheet" asp-append-version="true">
+
+    <!-- Custom CSS -->
+    <link href="~/assets/css/style.css" rel="stylesheet" asp-append-version="true">
+	@RenderSection("Css", required: false)
+</head>
+<body>
+
+	 <div id="main-wrapper">
+
+     <!-- ============================================================== -->
+     <!-- Top header  -->
+     <!-- ============================================================== -->
+     <!-- Start Navigation -->
+     <div class="header header-dark">
+         <div class="container">
+             <nav id="navigation" class="navigation navigation-landscape">
+                 <div class="nav-header">
+                        <a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/img/logo.png" class="logo" alt=""></a>
+                     <div class="nav-toggle"></div>
+                     <div class="mobile_nav">
+                         <ul>
+                             <li class="currencyDropdown me-2">
+                                 <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#currencyModal">
+                                     <span class="fw-medium">INR</span>
+                                 </a>
+                             </li>
+                             <li class="languageDropdown me-2">
+                                 <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#countryModal">
+                                        <img src="~/assets/img/flag/flag.png" class="img-fluid" width="17" alt="Country">
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#" class="bg-light-primary text-primary rounded" data-bs-toggle="modal"
+                                    data-bs-target="#login"><i class="fa-regular fa-circle-user fs-6"></i></a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+					<div class="nav-menus-wrapper" style="transition-property: none;">
+
+
+                                @if (@HttpContextAccessor.HttpContext.Session.GetString("EmployeeId") == null)
+                                {
+                                <ul class="nav-menu">
+                                    <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-umbrella-beach me-2"></i>Home</a></li>
+                                </ul>
+                                <ul class="nav-menu nav-menu-social align-to-right">
+
+							        <li class="list-buttons">
+                                    <a asp-area="" asp-controller="Login" asp-action="Index" class="bg-primary">
+									    <i class="fa-regular fa-circle-user fs-6 me-2"></i>Sign In
+                                    </a>
+                                    </li>
+                                </ul>
+
+                                } else
+                                {
+                            <ul class="nav-menu">
+
+                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-umbrella-beach me-2"></i>Home</a></li>
+                                <li><a asp-area="" asp-controller="Customers" asp-action="Index"><i class="fa-solid fa-user-check me-2"></i>Customers</a></li>
+                            </ul>
+                                    <ul class="nav-menu nav-menu-social align-to-right">
+
+                                        <li class="currencyDropdown me-2">
+                                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#currencyModal">
+                                             <i class="fa-regular fa-circle-user fs-6 me-2"></i>
+                                                <span class="fw-medium">@HttpContextAccessor.HttpContext.Session.GetString("EmployeeName")</span>
+                                            </a>
+                                        </li>
+							            <li class="list-buttons">
+                                                <a asp-area="" asp-controller="Login" asp-action="Logout" class="bg-primary">
+                                                LogOut
+                                            </a>
+                                        </li>
+
+						        </ul>
+                                }
+					</div>
+             </nav>
+         </div>
+     </div>
+     <!-- End Navigation -->
+     <div class="clearfix"></div>
+     <!-- ============================================================== -->
+     <main role="main" class="pb-3">
+         @RenderBody()
+     </main>
+
+     <!-- ============================ Footer Start ================================== -->
+     <footer class="skin-dark-footer">
+         <div>
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-lg-3 col-md-4">
+                         <div class="footer-widget">
+                             <div class="d-flex align-items-start flex-column mb-3">
+                                 <div class="d-inline-block">
+                                     <img src="~/assets/img/logo-light.png" class="img-fluid" width="160"
+                                          alt="Footer Logo">
+                                 </div>
+                             </div>
+                             <div class="footer-add pe-xl-3">
+                                 <p>We make your dream more beautiful & enjoyful with lots of happiness.</p>
+                             </div>
+                             <div class="foot-socials">
+                                 <ul>
+                                     <li><a href="JavaScript:Void(0);"><i class="fa-brands fa-facebook"></i></a></li>
+                                     <li><a href="JavaScript:Void(0);"><i class="fa-brands fa-linkedin"></i></a></li>
+                                     <li><a href="JavaScript:Void(0);"><i class="fa-brands fa-google-plus"></i></a></li>
+                                     <li><a href="JavaScript:Void(0);"><i class="fa-brands fa-twitter"></i></a></li>
+                                     <li><a href="JavaScript:Void(0);"><i class="fa-brands fa-dribbble"></i></a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-lg-2 col-md-4">
+                         <div class="footer-widget">
+                             <h4 class="widget-title">The Navigation</h4>
+                             <ul class="footer-menu">
+                                 <li><a href="JavaScript:Void(0);">Talent Marketplace</a></li>
+                                 <li><a href="JavaScript:Void(0);">Payroll Services</a></li>
+                                 <li><a href="JavaScript:Void(0);">Direct Contracts</a></li>
+                                 <li><a href="JavaScript:Void(0);">Hire Worldwide</a></li>
+                                 <li><a href="JavaScript:Void(0);">Hire in the USA</a></li>
+                                 <li><a href="JavaScript:Void(0);">How to Hire</a></li>
+                             </ul>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-2 col-md-4">
+                         <div class="footer-widget">
+                             <h4 class="widget-title">Our Resources</h4>
+                             <ul class="footer-menu">
+                                 <li><a href="JavaScript:Void(0);">Free Business tools</a></li>
+                                 <li><a href="JavaScript:Void(0);">Affiliate Program</a></li>
+                                 <li><a href="JavaScript:Void(0);">Success Stories</a></li>
+                                 <li><a href="JavaScript:Void(0);">Upwork Reviews</a></li>
+                                 <li><a href="JavaScript:Void(0);">Resources</a></li>
+                                 <li><a href="JavaScript:Void(0);">Help & Support</a></li>
+                             </ul>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-2 col-md-6">
+                         <div class="footer-widget">
+                             <h4 class="widget-title">The Company</h4>
+                             <ul class="footer-menu">
+                                 <li><a href="JavaScript:Void(0);">About Us</a></li>
+                                 <li><a href="JavaScript:Void(0);">Leadership</a></li>
+                                 <li><a href="JavaScript:Void(0);">Contact Us</a></li>
+                                 <li><a href="JavaScript:Void(0);">Investor Relations</a></li>
+                                 <li><a href="JavaScript:Void(0);">Trust, Safety & Security</a></li>
+                             </ul>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-3 col-md-6">
+                         <div class="footer-widget">
+                             <h4 class="widget-title">Payment Methods</h4>
+                             <div class="pmt-wrap">
+                                    <img src="~/assets/img/payment.png" class="img-fluid" alt="">
+                             </div>
+                             <div class="our-prtwrap mt-4">
+                                 <div class="prtn-title">
+                                     <p class="text-light opacity-75 fw-medium">Our Partners</p>
+                                 </div>
+                                 <div class="prtn-thumbs d-flex align-items-center justify-content-start">
+                                     <div class="pmt-wrap pe-4">
+                                            <img src="~/assets/img/mytrip.png" class="img-fluid" alt="">
+                                     </div>
+                                     <div class="pmt-wrap pe-4">
+                                            <img src="~/assets/img/tripadv.png" class="img-fluid" alt="">
+                                     </div>
+                                     <div class="pmt-wrap pe-4">
+                                            <img src="~/assets/img/goibibo.png" class="img-fluid" alt="">
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+             </div>
+         </div>
+     </footer>
+     <!-- ============================ Footer End ================================== -->
+     <!-- Log In Modal -->
+     <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+             <div class="modal-content" id="loginmodal">
+                 <div class="modal-header">
+                     <h4 class="modal-title fs-6">Sign In / Register</h4>
+                     <a href="#" class="text-muted fs-4" data-bs-dismiss="modal" aria-label="Close">
+                         <i class="fa-solid fa-square-xmark"></i>
+                     </a>
+                 </div>
+                 <div class="modal-body">
+                     <div class="modal-login-form py-4 px-md-3 px-0">
+                         <form>
+
+                             <div class="form-floating mb-4">
+                                 <input type="email" class="form-control" placeholder="name@example.com">
+                                 <label>User Name</label>
+                             </div>
+                             <div class="form-floating mb-4">
+                                 <input type="password" class="form-control" placeholder="Password">
+                                 <label>Password</label>
+                             </div>
+
+                             <div class="form-group">
+                                 <button type="submit" class="btn btn-primary full-width font--bold btn-lg">Log In</button>
+                             </div>
+
+                             <div class="modal-flex-item d-flex align-items-center justify-content-between mb-3">
+                                 <div class="modal-flex-first">
+                                     <div class="form-check form-check-inline">
+                                         <input class="form-check-input" type="checkbox" id="savepassword" value="option1">
+                                         <label class="form-check-label" for="savepassword">Save Password</label>
+                                     </div>
+                                 </div>
+                                 <div class="modal-flex-last">
+                                     <a href="JavaScript:Void(0);" class="text-primary fw-medium">Forget Password?</a>
+                                 </div>
+                             </div>
+                         </form>
+                     </div>
+
+                     <div class="prixer px-3">
+                         <div class="devider-wraps position-relative">
+                             <div class="devider-text text-muted-2 text-md">Sign In with More Methods</div>
+                         </div>
+                     </div>
+
+                     <div class="social-login py-4 px-2">
+                         <ul class="row align-items-center justify-content-between g-3 p-0 m-0">
+                             <li class="col">
+                                 <a href="#" class="square--60 border br-dashed rounded-2 full-width">
+                                     <i class="fa-brands fa-facebook color--facebook fs-2"></i>
+                                 </a>
+                             </li>
+                             <li class="col">
+                                 <a href="#" class="square--60 border br-dashed rounded-2">
+                                     <i class="fa-brands fa-whatsapp color--whatsapp fs-2"></i>
+                                 </a>
+                             </li>
+                             <li class="col">
+                                 <a href="#" class="square--60 border br-dashed rounded-2">
+                                     <i class="fa-brands fa-linkedin color--linkedin fs-2"></i>
+                                 </a>
+                             </li>
+                             <li class="col">
+                                 <a href="#" class="square--60 border br-dashed rounded-2">
+                                     <i class="fa-brands fa-dribbble color--dribbble fs-2"></i>
+                                 </a>
+                             </li>
+                             <li class="col">
+                                 <a href="#" class="square--60 border br-dashed rounded-2">
+                                     <i class="fa-brands fa-twitter color--twitter fs-2"></i>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+                 <div class="modal-footer align-items-center justify-content-center">
+                     <p>Don't have an account yet?<a href="signup.html" class="text-primary fw-medium ms-1">Sign Up</a></p>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- End Modal -->
+
+
+
+ </div>
+	
+
+
+    <script src="~/assets/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/popper.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/dropzone.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/flatpickr.js" asp-append-version="true"></script>
+    <script src="~/assets/js/flickity.pkgd.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/lightbox.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/rangeslider.js" asp-append-version="true"></script>
+    <script src="~/assets/js/select2.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/counterup.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/prism.js" asp-append-version="true"></script>
+
+    <script src="assets/js/addadult.js" asp-append-version="true"></script>
+    <script src="assets/js/custom.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

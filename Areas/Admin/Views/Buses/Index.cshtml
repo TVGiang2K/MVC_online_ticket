@@ -1,0 +1,115 @@
+﻿@model X.PagedList.IPagedList<MVC_online_book_ticket.Models.Buses>
+@using X.PagedList.Mvc.Core;
+@{
+    var pageSize = Model.PageSize;
+    var currentPage = Model.PageNumber;
+    var indexStart = (currentPage - 1) * pageSize + 1;
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="card w-100">
+            <div class="card-body p-4">
+
+                <div class="row">
+                    <div class="col-sm-3 col-xl-3">
+                        <h5 class="d-flex card-title fw-semibold mb-4">List Buses</h5>
+                    </div>
+                    <div class="col-sm-9 col-xl-9">
+                        <h3 style="color:green">@TempData["success"]</h3>
+                        <h3 style="color:red">@TempData["error"]</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xl-2">
+                        <a asp-action="Create" class="d-flex btn btn-outline-link m-1 btn btn-primary">Add a Bus</a>
+                    </div>
+                    <div class="col-sm-6 col-xl-6 ">
+                        <form class="d-flex" action="" method="get">
+                            <div class="form-group mb-0 me-2">
+                                <input type="text" name="name" class="form-control" placeholder="Input text">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered text-nowrap mb-0 align-middle">
+                        <thead class="text-dark fs-4">
+                            <tr>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">Id</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().BusNumber)</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().BusTypes)</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">
+                                        @Html.DisplayNameFor(model => model.FirstOrDefault().LicensePlate)
+                                    </h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    @Html.DisplayNameFor(model => model.FirstOrDefault().SeatCapacity)
+                                </th>
+                                <th class="border-bottom-0">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">
+                                            @indexStart
+                                        </h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.BusNumber)
+                                        </h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.BusTypes)
+                                        </h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.LicensePlate)
+                                        </h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.SeatCapacity)
+                                        </h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <a asp-action="Edit" asp-route-id="@item.BusesId" class="badge bg-primary rounded-3 fw-semibold">Edit</a>|
+                                        <a asp-action="Details" asp-route-id="@item.BusesId" class="badge bg-success rounded-3 fw-semibold">Detail</a>|
+                                        <a asp-action="Delete" asp-route-id="@item.BusesId" onclick="return confirm('Are you sure you want to delete this item?')" class="badge bg-danger rounded-3 fw-semibold">Delete</a>
+                                    </td>
+                                </tr>
+                                indexStart++;
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),    new PagedListRenderOptions
+                    {
+                        LiElementClasses = new string[] { "page-item" },
+                        PageClasses = new string[] { "page-link" }
+                    }
+                    )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

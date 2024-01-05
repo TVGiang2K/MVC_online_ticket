@@ -1,0 +1,168 @@
+﻿@model X.PagedList.IPagedList<MVC_online_book_ticket.Models.Trips>
+@using X.PagedList.Mvc.Core
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- ============================ Hero Banner  Start================================== -->
+
+<div class="py-5 bg-primary position-relative">
+    <div class="container">
+        <!-- Search Form -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="search-wrap bg-white rounded-3 p-3">
+
+                <form method="get">
+                    <div class="row gx-lg-2 g-3">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="row gy-3 gx-lg-2 gx-3">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 position-relative">
+                                    <div class="form-group hdd-arrow mb-0">
+                                        <input class="form-control fw-bold" name="departure" type="text" placeholder="Leaving" value="@ViewBag.Departure">
+                                    </div>
+                                    <div class="btn-flip-icon mt-md-0">
+                                        <button class="p-0 m-0 text-primary"><i class="fa-solid fa-right-left"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group hdd-arrow mb-0">
+                                        <input class="form-control fw-bold" name="destination" type="text" placeholder="Going To" value="@ViewBag.Destination">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12">
+                            <div class="row gy-3 gx-lg-2 gx-3">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group mb-0">
+                                        <input class="form-control fw-bold choosedate flatpickr-input" type="date" placeholder="Departure.." name="departureDate" readonly="readonly" value="@ViewBag.DepartureDate">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group mb-0">
+                                        <input class="form-control fw-bold choosedate flatpickr-input" type="date" placeholder="Return.." name="returnDate" readonly="readonly" value="@ViewBag.ReturnDate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-12">
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn btn-primary full-width fw-medium"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- </row> -->
+
+    </div>
+</div>
+<!-- ============================ Hero Banner End ================================== -->
+
+
+<!-- ============================ Searching Destination Lists Start ================================== -->
+<section class="gray-simple">
+    <div class="container">
+        <div class="row justify-content-between gy-4 gx-xl-4 gx-lg-3 gx-md-3 gx-4">
+
+            <!-- Sidebar -->
+            <div class="col-lg-4 col-md-12">
+            </div>
+
+            <!-- All List -->
+            <div class="col-xl-12 col-lg-8 col-md-12">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <h5 class="fw-bold fs-6 mb-lg-0 mb-3">Showing @Model.Count.ToString("N0") Search Results</h5>
+                    </div>
+                </div>
+
+                <div class="row align-items-center g-4 mt-2">
+
+                    <!-- Single List -->
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="card list-layout-block rounded-3 p-3">
+                                <div class="row">
+
+                                    <div class="col-xl-4 col-lg-3 col-md">
+                                        <div class="cardImage__caps rounded-2 overflow-hidden h-100">
+                                            <img class="img-fluid h-100 object-fit" src="/img/trips/@item.Image" alt="@item.Image" alt="image">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl col-lg col-md">
+                                        <div class="listLayout_midCaps mt-md-0 mt-3 mb-md-0 mb-3">
+                                            <div class="d-flex align-items-center justify-content-start mb-1">
+                                                <span class="label bg-light-success text-success">Denver</span>
+                                            </div>
+                                            <h4 class="fs-5 fw-bold mb-1">@Html.DisplayFor(model => item.DepartureLocation) to @Html.DisplayFor(model => item.DestinationLocation)</h4>
+                                            <ul class="row gx-2 p-0 excortio">
+                                                <li class="col-auto">
+                                                    <p class="text-muted-2 text-md"></p>
+                                                </li>
+                                                <li class="col-auto">
+                                                    <p class="text-muted-2 text-md fw-bold">.</p>
+                                                </li>
+                                                <li class="col-auto">
+                                                    <p class="text-muted-2 text-md">@Html.DisplayFor(model => item.Distance) from @Html.DisplayFor(model => item.DepartureLocation)</p>
+                                                </li>
+                                            </ul>
+                                            <div class="detail ellipsis-container mt-3">
+                                               From <span class="ellipsis">@Html.DisplayFor(model => item.DepartureDateTime)</span>
+                                               to <span class="ellipsis">@Html.DisplayFor(model => item.DestinationDateTime)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-auto col-lg-auto col-md-auto text-right text-md-left d-flex align-items-start align-items-md-end flex-column">
+                                        <div class="row align-items-center justify-content-start justify-content-md-end gx-2 mb-3">
+                                            <div class="col-auto text-start text-md-end">
+                                                <div class="text-md text-dark fw-medium">Exceptional</div>
+                                                <div class="text-md text-muted-2">3,014 reviews</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="square--40 rounded-2 bg-primary text-light">4.8</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative mt-auto full-width">
+                                            <div class="d-flex align-items-center justify-content-start justify-content-md-end mb-1">
+                                                <span class="label bg-light-danger text-danger">15% Off</span>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-start justify-content-md-end">
+                                                <div class="text-muted-2 fw-medium text-decoration-line-through me-2">US$79</div>
+                                                <div class="text-dark fw-bold fs-3">$@Html.DisplayFor(model => item.BasePrice)</div>
+                                            </div>
+                                            <div class="d-flex align-items-start align-items-md-end text-start text-md-end flex-column">
+                                                <a asp-action="DetailsTrips" asp-route-id="@item.TripsId" class="btn btn-md btn-primary full-width fw-medium px-lg-4">
+                                                    See Availability<i class="fa-solid fa-arrow-trend-up ms-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                   
+
+
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),
+                    new PagedListRenderOptions
+                    {
+                        LiElementClasses = new string[] { "page-item" },
+                        PageClasses = new string[] { "page-link" }
+                    }
+                             )
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ============================ Destination Searches Lists End ================================== -->

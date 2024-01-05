@@ -1,0 +1,176 @@
+﻿@model MVC_online_book_ticket.Models.Accounts
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var erA = ViewBag.errA;
+    var erP = ViewBag.errP;
+    var erN = ViewBag.errN;
+    var er = ViewBag.error;
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3 col-xl-3">
+                        <h5 class="card-title fw-semibold mb-4">Forms add Account</h5>
+                </div>
+                <div class="col-sm-9 col-xl-9">
+                    <h3 style="color:red"><span class="text-danger">@er</span></h3>
+                </div>
+                <div class="col-sm-2 col-xl-2">
+                    <a asp-action="Index" class="d-flex btn btn-outline-link m-1 btn btn-warning">Back to list</a>
+                </div>
+
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Username" class="form-label"></label>
+                                    <input asp-for="Username" class="form-control" />
+                                    <span asp-validation-for="Username" class="form-text text-danger"></span>
+                                    <span class="text-danger">@erN</span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Password" class="form-label"></label>
+                                    <div class="input-group">
+                                        <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1">
+                                        <span class="toggle-password input-group-text">
+                                            <i class="ti ti-eye"></i>
+                                        </span>
+                                    </div>
+                                    <span class="text-danger">@erP</span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Name" class="form-label"></label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Age" class="form-label"></label>
+                                    <input asp-for="Age" class="form-control" />
+                                    <span asp-validation-for="Age" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Phone" class="form-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Qualification" class="form-label"></label>
+                                    <input asp-for="Qualification" class="form-control" />
+                                    <span asp-validation-for="Qualification" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Position" class="form-label"></label>
+                                    <input asp-for="Position" class="form-control" />
+                                    <span asp-validation-for="Position" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Email" class="form-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <b><label asp-for="Gender" class="form-label"></label></b>
+                                        <div class="radio inlineblock m-r-20">
+                                            <input asp-for="Gender" type="radio" id="M" class="with-gap" value="true" checked>
+                                            <label for="M">Man</label>
+                                        </div>
+                                        <div class="radio inlineblock">
+                                        <input asp-for="Gender" type="radio" id="W" class="with-gap" value="false">
+                                            <label for="W">Woman</label>
+                                        </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Birthday" class="form-label"></label>
+                                    <input asp-for="Birthday" class="form-control" />
+                                    <span asp-validation-for="Birthday" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Avatar" class="form-label"></label>
+                                    <input asp-for="Avatar" type="file" class="form-control" id="avatarInput" onchange="previewImage()" />
+                                    <span class="text-danger">@erA</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+                                    <img id="avatarPreview" src="#" alt="Preview" style="max-width: 100%; max-height: 200px; display: none;" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage() {
+        var input = document.getElementById('avatarInput');
+        var preview = document.getElementById('avatarPreview');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.getElementById('exampleInputPassword1');
+            const togglePassword = document.querySelector('.toggle-password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                togglePassword.classList.toggle('fa-eye-slash');
+            });
+        });
+</script>

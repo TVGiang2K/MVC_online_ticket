@@ -1,0 +1,146 @@
+﻿@model MVC_online_book_ticket.Models.Trips
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var er = ViewBag.error;
+
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3 col-xl-3">
+                    <h5 class="card-title fw-semibold mb-4">Forms edit Trip</h5>
+                </div>
+                <div class="col-sm-9 col-xl-9">
+                    <h3 style="color:red"><span class="text-danger">@er</span></h3>
+                </div>
+                <div class="col-sm-2 col-xl-2">
+                    <a asp-action="Index" class="d-flex btn btn-outline-link m-1 btn btn-warning">Back to list</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Edit" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="TripsId" />
+                        <div class="row">
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="DepartureLocation" class="form-label"></label>
+                                    <input asp-for="DepartureLocation" class="form-control" />
+                                    <span asp-validation-for="DepartureLocation" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="DestinationLocation" class="form-label"></label>
+                                    <input asp-for="DestinationLocation" class="form-control" />
+                                    <span asp-validation-for="DestinationLocation" class="text-danger"></span>
+
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="DepartureDateTime" class="form-label"></label>
+                                    <input asp-for="DepartureDateTime" class="form-control" />
+                                    <span asp-validation-for="DepartureDateTime" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="Distance" class="form-label"></label>
+                                    <input asp-for="Distance" class="form-control" />
+                                    <span asp-validation-for="Distance" class="form-text text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="BasePrice" class="form-label"></label>
+                                    <input asp-for="BasePrice" class="form-control" />
+                                    <span asp-validation-for="BasePrice" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="DestinationDateTime" class="form-label"></label>
+                                    <input asp-for="DestinationDateTime" class="form-control" />
+                                    <span asp-validation-for="DestinationDateTime" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="RouteTrip" class="form-label"></label>
+                                    <textarea asp-for="RouteTrip" cols="100" rows="5" class="form-control"></textarea>
+                                    <span asp-validation-for="RouteTrip" class="form-text text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex">
+                                <div class="mb-3">
+                                    <label asp-for="BusesId" class="form-label"></label>
+                                    <select asp-for="BusesId" class="form-control" asp-items="ViewBag.BusesId"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 d-flex">
+                                <div class="mb-3">
+
+                                    <label asp-for="Image" class="form-label"></label>
+                                    <input asp-for="Image" type="file" class="form-control" id="avatarInput" onchange="previewImage()" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <label class="form-label mx-5">New Image</label>
+                                <div class="mb-3">
+                                    <img id="avatarPreview" src="#" alt="Preview" style="max-width: 100%; max-height: 200px; display: none;" />
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <label class="form-label mx-5">Old Avatar</label>
+                                <div class="mb-3">
+                                    <img id="avatarPreview" src="/img/trips/@Model.Image" alt="@Model.Image" style="max-width: 100%; max-height: 200px;" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage() {
+        var input = document.getElementById('avatarInput');
+        var preview = document.getElementById('avatarPreview');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    }
+</script>
+

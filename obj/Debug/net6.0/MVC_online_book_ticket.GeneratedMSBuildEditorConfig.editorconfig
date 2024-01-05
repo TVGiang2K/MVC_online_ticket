@@ -1,0 +1,399 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MVC_online_book_ticket
+build_property.RootNamespace = MVC_online_book_ticket
+build_property.ProjectDir = D:\Training\MVC_online_ticket\MVC_online_book_ticket\MVC_online_book_ticket\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Training\MVC_online_ticket\MVC_online_book_ticket\MVC_online_book_ticket
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWdlbmNpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnVzZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnVzZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnVzZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnVzZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmluYW5jaWFsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmluYW5jaWFsc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmluYW5jaWFsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmluYW5jaWFsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Shared/_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJpcHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFjY291bnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFjY291bnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFjY291bnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFjY291bnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFnZW5jaWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFnZW5jaWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFnZW5jaWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Agencies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEFnZW5jaWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEJ1c2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEJ1c2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEJ1c2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Buses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEJ1c2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEN1c3RvbWVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEN1c3RvbWVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEZpbmFuY2lhbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEZpbmFuY2lhbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEZpbmFuY2lhbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Financials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEZpbmFuY2lhbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXExvZ2luXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Shared/_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXFNoYXJlZFxfQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXFRyaXBzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXFRyaXBzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXFRyaXBzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/Trips/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXFRyaXBzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XEFyZWFzXEFkbWluXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEN1c3RvbWVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEN1c3RvbWVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEN1c3RvbWVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEN1c3RvbWVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/ManagerBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEN1c3RvbWVyc1xNYW5hZ2VyQm9va2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEN1c3RvbWVyc1xTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/DetailsTrips.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEhvbWVcRGV0YWlsc1RyaXBzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/ListAgencies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXEhvbWVcTGlzdEFnZW5jaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXExvZ2luXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXExvZ2luXEZvcmdldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXExvZ2luXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/AddQuantityGuest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXFJlc2VydmF0aW9uc1xBZGRRdWFudGl0eUd1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/ReservationsConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXFJlc2VydmF0aW9uc1xSZXNlcnZhdGlvbnNDb25maXJtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/ReservationsDone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXFJlc2VydmF0aW9uc1xSZXNlcnZhdGlvbnNEb25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXFNoYXJlZFxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/ManagerBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXE1hbmFnZXJCb29raW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/ReservationsDone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXFJlc2VydmF0aW9uc0RvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Customers/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/DetailsTrips.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzVHJpcHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Home/ListAgencies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0QWdlbmNpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRm9yZ2V0UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/AddQuantityGuest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEFkZFF1YW50aXR5R3Vlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/ReservationsConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXFJlc2VydmF0aW9uc0NvbmZpcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Reservations/ReservationsDone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXFJlc2VydmF0aW9uc0RvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TVZDX29ubGluZV9ib29rX3RpY2tldFxNVkNfb25saW5lX2Jvb2tfdGlja2V0XFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-sn7c4y516j
+
+[D:/Training/MVC_online_ticket/MVC_online_book_ticket/MVC_online_book_ticket/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-s7ydr8suia

@@ -1,0 +1,142 @@
+﻿@model MVC_online_book_ticket.Models.Reservations;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    var totalprice = ViewBag.TotlPrice;
+    var vat = ViewBag.VAT;
+    var financials = ViewBag.Financials;
+    var rI = ViewBag.ReservationInfo;
+}
+
+<!-- ============================ Booking Page ================================== -->
+<section class="pt-4 gray-simple position-relative">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div id="stepper" class="bs-stepper stepper-outline mb-5">
+                    <div class="bs-stepper-header">
+                        <!-- Step 1 -->
+                        <div class="step completed" data-target="#step-1">
+                            <div class="text-center">
+                                <button type="button" class="step-trigger mb-0" id="steppertrigger1">
+                                    <span class="bs-stepper-circle"><i class="fa-solid fa-check"></i></span>
+                                </button>
+                                <h6 class="bs-stepper-label d-none d-md-block">Tour Review</h6>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+
+                        <!-- Step 2 -->
+                        <div class="step completed" data-target="#step-2">
+                            <div class="text-center">
+                                <button type="button" class="step-trigger mb-0" id="steppertrigger2">
+                                    <span class="bs-stepper-circle">2</span>
+                                </button>
+                                <h6 class="bs-stepper-label d-none d-md-block">Quantity Guest</h6>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+
+                        <!-- Step 3 -->
+                        <div class="step active" data-target="#step-3">
+                            <div class="text-center">
+                                <button type="button" class="step-trigger mb-0" id="steppertrigger3">
+                                    <span class="bs-stepper-circle">3</span>
+                                </button>
+                                <h6 class="bs-stepper-label d-none d-md-block">Confirm</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-start">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="div-title d-flex align-items-center mb-3">
+                    <h4>Confirm</h4>
+                </div>
+                <form method="post" asp-action="ReservationsConfirm">
+                    <input type="hidden" asp-for="AccountsId" value="@HttpContextAccessor.HttpContext.Session.GetString("EmployeeId")" />
+                    <input type="hidden" asp-for="CustomersId" value="@rI.Customers.CustomersId" />
+                    <input type="hidden" asp-for="TripsId" value="@rI.Trips.TripsId" />
+                    <div class="row align-items-start">
+                        <div class="side-block card rounded-2 p-3">
+                            <h5 class="fw-semibold fs-6">Reservation Summary</h5>
+                            <div class="mid-block rounded-2 border br-dashed p-2 mb-3">
+                                <div class="row align-items-center justify-content-between g-2 mb-4">
+                                    <div class="col-4">
+                                        <div class="gray rounded-2 p-2">
+                                            <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Full Name</span>
+                                            <p class="text-dark fw-semibold lh-base text-md mb-0">@rI.Customers.Name</p>
+                                        </div>
+                                    </div><div class="col-4">
+                                        <div class="gray rounded-2 p-2">
+                                            <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Phone</span>
+                                            <p class="text-dark fw-semibold lh-base text-md mb-0">@rI.Customers.Phone</p>
+                                        </div>
+                                    </div><div class="col-4">
+                                        <div class="gray rounded-2 p-2">
+                                            <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Email</span>
+                                            <p class="text-dark fw-semibold lh-base text-md mb-0">@rI.Customers.CustomersId</p>
+                                        </div>
+                                    </div><div class="col-6">
+                                        <div class="gray rounded-2 p-2">
+                                            <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Check-In</span>
+                                            <p class="text-dark fw-semibold lh-base text-md mb-0">@rI.Trips.DepartureLocation</p>
+                                            <span class="text-dark text-md">From @rI.Trips.DepartureDateTime</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="gray rounded-2 p-2">
+                                            <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Check-Out</span>
+                                            <p class="text-dark fw-semibold lh-base text-md mb-0">@rI.Trips.DestinationLocation</p>
+                                            <span class="text-dark text-md">By @rI.Trips.DestinationDateTime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bott-block d-block mb-3">
+                                <h5 class="fw-semibold fs-6">Your Price Summary</h5>
+                                <ul class="list-group list-group-borderless">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="fw-medium mb-0">@Html.DisplayNameFor(model => model.Trips.BasePrice)</span>
+                                        <span class="fw-semibold">$ @Model.Trips.BasePrice</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="fw-medium mb-0">
+                                            Total Discount
+                                        </span>
+                                        <span class="fw-semibold">-@financials %</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="fw-medium mb-0">@Html.DisplayNameFor(model => model.Vat) (%)</span>
+                                        <span class="fw-semibold"><input asp-for="Vat" value="@Model.Vat" style="text-align:right; border: hidden; outline: none" readonly /></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="fw-medium text-success mb-0">@Html.DisplayNameFor(model => model.TotalPrice)</span>
+                                        <span class="fw-semibold text-success">$ <input asp-for="TotalPrice" value="@totalprice" style="text-align:right; border: hidden; outline: none" readonly /></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bott-block">
+                                <button type="submit" class="btn fw-medium btn-primary full-width">Request To Book</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="text-center d-flex align-items-center justify-content-center mt-4">
+                    <a asp-area="" asp-controller="Reservations" asp-action="AddQuantityGuest" asp-route-idTrip="@rI.Trips.TripsId" class="btn btn-md btn-dark fw-semibold mx-2">
+                        <i class="fa-solid fa-arrow-left me-2"></i>Previous
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================ Booking Page End ================================== -->

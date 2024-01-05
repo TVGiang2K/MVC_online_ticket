@@ -1,0 +1,75 @@
+﻿@model MVC_online_book_ticket.Models.DTOs.AuthenticationDTO
+@{
+    Layout = null;
+	var er = ViewBag.error;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Modernize Free</title>
+	<link rel="shortcut icon" type="image/png" href="~/assetsAdmin/images/logos/favicon.png" />
+	<link rel="stylesheet" href="~/assetsAdmin/css/styles.min.css" />
+</head>
+
+<body>
+	<!--  Body Wrapper -->
+	<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+		 data-sidebar-position="fixed" data-header-position="fixed">
+		<div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+			<div class="d-flex align-items-center justify-content-center w-100">
+				<div class="row justify-content-center w-100">
+					<div class="col-md-8 col-lg-6 col-xxl-3">
+						<div class="card mb-0">
+							<div class="card-body">
+								<p>
+									<img src="~/assetsAdmin/images/logos/dark-logo.svg" width="180" alt="">
+								</p>
+								<h5 style="color:red"><span class="text-danger">@er</span></h5>
+								<form method="post" action="">
+									<div class="mb-3">
+										<label asp-for="Username" class="form-label"></label>
+										<input asp-for="Username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+										<span asp-validation-for="Username" class="text-danger"></span>
+									</div>
+									<div class="mb-4">
+										<label asp-for="Password" class="form-label"></label>
+										<div class="input-group">
+											<input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1">
+											<span class="toggle-password input-group-text">
+												<i class="ti ti-eye"></i>
+											</span>
+										</div>
+										<span asp-validation-for="Password" class="text-danger"></span>
+									</div>
+
+
+									<button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const passwordInput = document.getElementById('exampleInputPassword1');
+			const togglePassword = document.querySelector('.toggle-password');
+
+			togglePassword.addEventListener('click', function () {
+				const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+				passwordInput.setAttribute('type', type);
+				togglePassword.classList.toggle('fa-eye-slash');
+			});
+		});
+	</script>
+	<script src="~/assetsAdmin/libs/jquery/dist/jquery.min.js"></script>
+	<script src="~/assetsAdmin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

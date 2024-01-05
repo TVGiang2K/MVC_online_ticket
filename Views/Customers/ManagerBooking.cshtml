@@ -1,0 +1,147 @@
+﻿@model MVC_online_book_ticket.Models.Reservations;
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    var discountPercen = ViewBag.discountPercen;
+    var discountRefund = ViewBag.discountRefund;
+}
+<div class="container">
+
+    <div class="row align-items-start">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+            <div class="div-title d-flex align-items-center mb-3">
+                <h4>Revesation Detail</h4>
+            </div>
+            <form method="post" asp-action="ManagerBooking">
+                <input type="hidden" asp-for="AccountsId" value="@HttpContextAccessor.HttpContext.Session.GetString("EmployeeId")" />
+                <input type="hidden" asp-for="CustomersId" value="@Model.CustomersId" />
+                <input type="hidden" asp-for="TripsId" value="@Model.TripsId" />
+                <input type="hidden" asp-for="ReservationsId" value="@ViewBag.idRes" />
+                <div class="row align-items-start">
+                    <div class="side-block card rounded-2 p-3">
+                        <h5 class="fw-semibold fs-6">Reservation Summary</h5>
+                        <div class="mid-block rounded-2 border br-dashed p-2 mb-3">
+                            <div class="row align-items-center justify-content-between g-2 mb-4">
+                                <div class="col-4">
+                                    <div class="gray rounded-2 p-2">
+                                        <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Full Name</span>
+                                        <p class="text-dark fw-semibold lh-base text-md mb-0">@Model.Customers.Name</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="gray rounded-2 p-2">
+                                        <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Phone</span>
+                                        <p class="text-dark fw-semibold lh-base text-md mb-0">@Model.Customers.Phone</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="gray rounded-2 p-2">
+                                        <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Order date</span>
+                                        <p class="text-dark fw-semibold lh-base text-md mb-0">@Model.ReservationDateTime</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="gray rounded-2 p-2">
+                                        <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Check-In</span>
+                                        <p class="text-dark fw-semibold lh-base text-md mb-0">@Model.Trips.DepartureLocation</p>
+                                        <span class="text-dark text-md">From @Model.Trips.DepartureDateTime</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="gray rounded-2 p-2">
+                                        <span class="d-block text-muted-3 text-sm fw-medium text-uppercase mb-2">Check-Out</span>
+                                        <p class="text-dark fw-semibold lh-base text-md mb-0">@Model.Trips.DestinationLocation</p>
+                                        <span class="text-dark text-md">By @Model.Trips.DestinationDateTime</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bott-block d-block mb-3">
+                            <h5 class="fw-semibold fs-6">Your Price Summary</h5>
+                            <ul class="list-group list-group-borderless">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="fw-medium mb-0">@Html.DisplayNameFor(model => model.Trips.BasePrice) ($)</span>
+                                    <span class="fw-semibold">@Model.Trips.BasePrice</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="fw-medium mb-0">
+                                        Total Discount(%)
+                                    </span>
+                                    <span class="fw-semibold">-@discountPercen </span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="fw-medium mb-0">@Html.DisplayNameFor(model => model.Vat) (%)</span>
+                                    <span class="fw-semibold">@Model.Vat</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="fw-medium text-success mb-0">@Html.DisplayNameFor(model => model.TotalPrice) ($)</span>
+                                    <span class="fw-semibold text-success"><input asp-for="TotalPrice" value="@Model.TotalPrice" style="text-align:right; border: hidden; outline: none" readonly /></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bott-block">
+                            @if(Model.ActiveReservation ==1){
+                            <button type="submit" class="btn fw-medium btn-primary full-width">Cancle To Book</button>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </form>
+            @if (Model.ActiveReservation == 1)
+            {
+                <div class="bott-block d-block mb-3 mt-3">
+                    <h5 class="fw-semibold fs-6">If you cancle to book</h5>
+                    <ul class="list-group list-group-borderless">
+                        @foreach (var r in ViewBag.discountRefund)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="fw-medium mb-0">@r.Title</span>
+                                @{
+
+                                    // Tính giảm giá và hiển thị kết quả
+                                    double discountedPrice = @Model.TotalPrice - (@Model.TotalPrice * @r.Percentage / 100);
+                                }
+                                <span class="fw-semibold">@discountedPrice</span>
+                            </li>
+
+                        }
+
+                    </ul>
+                </div>
+
+            }
+            else
+            {
+                <div class="bott-block d-block mb-3 mt-3">
+                    <h5 class="fw-semibold fs-6">you cancle to book</h5>
+                    <ul class="list-group list-group-borderless">
+                        
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-medium mb-0">Refund Amount</span>
+                            <span class="fw-semibold">@Model.RefundAmount</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-medium mb-0">Cancellation Date</span>
+                            <span class="fw-semibold">@Model.CancellationDateTime</span>
+                            </li>
+                            
+
+
+                    </ul>
+                </div>
+            }
+
+        </div>
+
+        @* <div class="col-xl-12 col-lg-12 col-md-12">
+        <div class="text-center d-flex align-items-center justify-content-center mt-4">
+        <a asp-area="" asp-controller="Reservations" asp-action="AddQuantityGuest" asp-route-idTrip="@Model.Trips.TripsId" class="btn btn-md btn-dark fw-semibold mx-2">
+        <i class="fa-solid fa-arrow-left me-2"></i>Previous
+        </a>
+        </div>
+        </div> *@
+    </div>
+</div>
