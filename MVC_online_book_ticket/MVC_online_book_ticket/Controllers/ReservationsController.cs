@@ -6,7 +6,7 @@ using MVC_online_book_ticket.Models.DTOs;
 
 namespace MVC_online_book_ticket.Controllers
 {
-    public class ReservationsController : EmployeesBaseController
+    public class ReservationsController : Controller
     {
         private readonly AppDbContext _context;
         public ReservationsController(AppDbContext context)
@@ -93,5 +93,6 @@ namespace MVC_online_book_ticket.Controllers
             return View();
         }
 
+     
     }
 }

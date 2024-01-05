@@ -1,145 +1,150 @@
 ﻿@model X.PagedList.IPagedList<MVC_online_book_ticket.Models.Reservations>
 @using X.PagedList.Mvc.Core;
 @{
-	var pageSize = Model.PageSize;
-	var currentPage = Model.PageNumber;
-	ViewData["Title"] = "Details";
-	var ac = ViewBag.customer;
+    var pageSize = Model.PageSize;
+    var currentPage = Model.PageNumber;
+    ViewData["Title"] = "Details";
+    var ac = ViewBag.customer;
+    var reservations = ViewBag.reservations;
 }
 <!-- ============================ Booking Page ================================== -->
 <section class="pt-5 gray-simple position-relative">
-	<div class="container">
+    <div class="container">
 
-		<div class="row align-items-start justify-content-between gx-xl-4">
+        <div class="row align-items-start justify-content-between gx-xl-4">
 
-			<div class="col-xl-4 col-lg-4 col-md-12">
-				<div class="card rounded-2 me-xl-5 mb-4">
-					<div class="card-top bg-primary position-relative">
-						<div class="position-absolute end-0 top-0 mt-4 me-3">
-							<a asp-action="Index"
-							   class="square--40 circle bg-light-dark text-light">
-								<i class="fa-solid fa-right-from-bracket"></i>
-							</a>
-						</div>
-						<div class="py-5 px-3">
-							<div class="crd-capser text-center">
-								<h5 class="mb-0 text-light fw-semibold">@ac.Name</h5>
-								<p class="text-light opacity-75 fw-medium text-md">
-									Age : @ac.Age
-								</p>
-								<p class="text-light opacity-75 fw-medium text-md">
-									Birthday : @ac.Birthday
-								</p>
-								<p class="text-light opacity-75 fw-medium text-md">
-									Gender :
-									@if (ac.Gender == true)
-									{
-										<span>Man</span>
-									}
-									else
-									{
-										<span>Woman</span>
-									}
-								</p>
-							</div>
-						</div>
-					</div>
+            <div class="col-xl-4 col-lg-4 col-md-12">
+                <div class="card rounded-2 me-xl-5 mb-4">
+                    <div class="card-top bg-primary position-relative">
+                        <div class="position-absolute end-0 top-0 mt-4 me-3">
+                            <a asp-action="Index"
+                               class="square--40 circle bg-light-dark text-light">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        </div>
+                        <div class="py-5 px-3">
+                            <div class="crd-capser text-center">
+                                <h5 class="mb-0 text-light fw-semibold">@ac.Name</h5>
+                                <p class="text-light opacity-75 fw-medium text-md">
+                                    Age : @ac.Age
+                                </p>
+                                <p class="text-light opacity-75 fw-medium text-md">
+                                    Birthday : @ac.Birthday
+                                </p>
+                                <p class="text-light opacity-75 fw-medium text-md">
+                                    Gender :
+                                    @if (ac.Gender == true)
+                                    {
+                                        <span>Man</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Woman</span>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="card-middle px-4 py-5">
-						<div class="crdapproval-groups">
+                    <div class="card-middle px-4 py-5">
+                        <div class="crdapproval-groups">
 
-							<div class="crdapproval-single d-flex align-items-center justify-content-start mb-4">
-								<div class="crdapproval-item">
-									<div class="square--50 circle bg-light-success text-success">
-										<i class="fa-solid fa-phone-volume fs-5"></i>
-									</div>
-								</div>
-								<div class="crdapproval-caps ps-2">
-									<p class="fw-semibold text-dark lh-2 mb-0">Your Phone Number</p>
-									<p class="text-md text-muted lh-1 mb-0">@ac.Phone</p>
-								</div>
-							</div>
+                            <div class="crdapproval-single d-flex align-items-center justify-content-start mb-4">
+                                <div class="crdapproval-item">
+                                    <div class="square--50 circle bg-light-success text-success">
+                                        <i class="fa-solid fa-phone-volume fs-5"></i>
+                                    </div>
+                                </div>
+                                <div class="crdapproval-caps ps-2">
+                                    <p class="fw-semibold text-dark lh-2 mb-0">Your Phone Number</p>
+                                    <p class="text-md text-muted lh-1 mb-0">@ac.Phone</p>
+                                </div>
+                            </div>
 
-							<div class="crdapproval-single d-flex align-items-center justify-content-start mb-4">
-								<a asp-action="Edit" asp-route-id="@ac.CustomersId" class="btn btn-light-primary fw-medium full-width rounded-2">
-									<i class="fa-solid fa-sun me-2"></i>Update Customer
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                            <div class="crdapproval-single d-flex align-items-center justify-content-start mb-4">
+                                <a asp-action="Edit" asp-route-id="@ac.CustomersId" class="btn btn-light-primary fw-medium full-width rounded-2">
+                                    <i class="fa-solid fa-sun me-2"></i>Update Customer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-			<div class="col-xl-8 col-lg-8 col-md-12">
+            <div class="col-xl-8 col-lg-8 col-md-12">
 
-				<!-- Personal Information -->
-				<div class="card">
-					<div class="card-header">
-						<h4><i class="fa-solid fa-ticket me-2"></i>My Bookings</h4>
-					</div>
-					<div class="card-body">
-						
-						<div class="row align-items-center justify-content-start">
-							<div class="col-xl-12 col-lg-12 col-md-12">
+                <!-- Personal Information -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fa-solid fa-ticket me-2"></i>My Bookings</h4>
+                    </div>
+                    <div class="card-body">
 
-								@foreach (var r in Model)
-								{
-								<!-- Single Item -->
-								<div class="card border br-dashed mb-4">
-									<!-- Card header -->
-									<div class="card-header nds-block border-bottom flex-column flex-md-row justify-content-between align-items-center">
-										<!-- Icon and Title -->
-										<div class="d-flex align-items-center">
-											<div class="square--50 circle bg-light-success text-success flex-shrink-0">
-												<i class="fa-solid fa-car"></i>
-											</div>
-											<!-- Title -->
-											<div class="ms-2">
-													<h6 class="card-title text-dark fs-5 mb-1">@Html.DisplayNameFor(model => model.FirstOrDefault().ReservationDateTime)</h6>
-												<ul class="nav nav-divider small">
-														<li class="nav-item text-muted">Booking ID: @Html.DisplayNameFor(model => model.FirstOrDefault().ReservationsId)</li>
-														<li class="nav-item ms-2"><span class="text-dark fw-medium">Active: @Html.DisplayNameFor(model => model.FirstOrDefault().ActiveReservation) </span></li>
-												</ul>
-											</div>
-										</div>
+                        <div class="row align-items-center justify-content-start">
+                            <div class="col-xl-12 col-lg-12 col-md-12">
 
-										<!-- Button -->
-										<div class="mt-2 mt-md-0">
-											<a href="#" class="btn btn-md btn-light-seegreen fw-medium mb-0">Manage Booking</a>
-										</div>
-									</div>
+                                @foreach (var r in Model)
+                                {
+                                    <!-- Single Item -->
+                                    <div class="card border br-dashed mb-4">
+                                        <!-- Card header -->
+                                        <div class="card-header nds-block border-bottom flex-column flex-md-row justify-content-between align-items-center">
+                                            <!-- Icon and Title -->
+                                            <div class="d-flex align-items-center">
+                                                <div class="square--50 circle bg-light-success text-success flex-shrink-0">
+                                                    <i class="fa-solid fa-car"></i>
+                                                </div>
+                                                <!-- Title -->
+                                                <div class="ms-2">
+                                                    <h6 class="card-title text-dark fs-5 mb-1">@Html.DisplayNameFor(model => model.FirstOrDefault().ReservationDateTime)</h6>
+                                                    <ul class="nav nav-divider small">
+                                                        <li class="nav-item text-muted">Booking ID: @Html.DisplayNameFor(model => model.FirstOrDefault().ReservationsId)</li>
+                                                        <li class="nav-item ms-2"><span class="text-dark fw-medium">Active: @Html.DisplayNameFor(model => model.FirstOrDefault().ActiveReservation) </span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
 
-									<!-- Card body -->
-									<div class="card-body">
-										<div class="row g-3">
-											<div class="col-sm-6 col-md-4">
-													<span>TotalPrice</span>
-													<h6 class="mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().TotalPrice)</h6>
-											</div>
+                                            <!-- Button -->
+                                            <div class="mt-2 mt-md-0">
+                                                <a asp-action="ManagerBooking" asp-route-id="@r.CustomersId" asp-route-idRes="@r.ReservationsId" class="btn btn-md btn-light-seegreen fw-medium mb-0">Manage Booking</a>
+                                            </div>
+                                        </div>
 
-											<div class="col-sm-6 col-md-4">
-													<span>RefundAmount</span>
-													<h6 class="mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().RefundAmount)</h6>
-											</div>
+                                        <!-- Card body -->
+                                        <div class="card-body">
+                                            <div class="row g-3">
+                                                <div class="col-sm-6 col-md-3">
+                                                    <span>TotalPrice</span>
+                                                    <h6 class="mb-0">$@Html.DisplayFor(model => model.FirstOrDefault().TotalPrice)</h6>
+                                                </div>
 
-											<div class="col-md-4">
-													<span>CancellationDateTime</span>
-													<h6 class="mb-0">@Html.DisplayNameFor(model => model.FirstOrDefault().CancellationDateTime)</h6>
-											</div>
-										</div>
-									</div>
-								</div>
+                                                <div class="col-md-3">
+                                                    <span>ReservationDateTime</span>
+                                                    <h6 class="mb-0">@Html.DisplayFor(model => model.FirstOrDefault().ReservationDateTime)</h6>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <span>RefundAmount</span>
+                                                    <h6 class="mb-0">@Html.DisplayFor(model => model.FirstOrDefault().RefundAmount)</h6>
+                                                </div>
 
-								}
+                                                <div class="col-md-3">
+                                                    <span>CancellationDateTime</span>
+                                                    <h6 class="mb-0">@Html.DisplayFor(model => model.FirstOrDefault().CancellationDateTime)</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
+                                }
 
-			</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-		</div>
-	</div>
+            </div>
+
+        </div>
+    </div>
 </section>
 <!-- ============================ Booking Page End ================================== -->
