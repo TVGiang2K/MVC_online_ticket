@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MVC_online_book_ticket.Data;
 using MVC_online_book_ticket.Models;
 using System.Diagnostics;
@@ -62,9 +63,17 @@ namespace MVC_online_book_ticket.Controllers
                 return NotFound();
             }
             var trip = await _context.Trips.FindAsync(id);
+
+            var financialList = await _context.Financials
+            .Where(x => x.Category == Category.Discount)
+            .ToListAsync();
             if (trip == null)
                 NotFound();
 
+            if (financialList == null)
+                NotFound();
+
+            ViewBag.financial = financialList;
             return View(trip);
         }
 

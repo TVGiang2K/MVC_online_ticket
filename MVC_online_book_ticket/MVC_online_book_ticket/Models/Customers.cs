@@ -20,9 +20,15 @@ namespace MVC_online_book_ticket.Models
         [Column(TypeName = "nvarchar(50)")]
         public string Phone { get; set; }
 
+        [EmailAddress(ErrorMessage = "Email address is not in correct format!")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(100)]
+        [Column(TypeName = "nvarchar(100)")]
+        public string Email { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
+
 
         public byte Age { get; set; }
 

@@ -61,7 +61,7 @@
 					<div class="nav-menus-wrapper" style="transition-property: none;">
 
 
-                                @if (@HttpContextAccessor.HttpContext.Session.GetString("EmployeeId") == null)
+                        @if (@HttpContextAccessor.HttpContext.Session.GetString("EmployeesLoginToken") == null)
                                 {
                                 <ul class="nav-menu">
                                     <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-umbrella-beach me-2"></i>Home</a></li>

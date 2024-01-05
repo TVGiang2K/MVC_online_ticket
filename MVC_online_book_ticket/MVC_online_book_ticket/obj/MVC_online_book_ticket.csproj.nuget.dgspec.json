@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj": {}
+    "G:\\SemIII\\eProject\\demon\\MVC_online_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj": {}
   },
   "projects": {
-    "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj": {
+    "G:\\SemIII\\eProject\\demon\\MVC_online_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
+        "projectUniqueName": "G:\\SemIII\\eProject\\demon\\MVC_online_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
         "projectName": "MVC_online_book_ticket",
-        "projectPath": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
+        "projectPath": "G:\\SemIII\\eProject\\demon\\MVC_online_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\obj\\",
+        "outputPath": "G:\\SemIII\\eProject\\demon\\MVC_online_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -31,7 +31,7 @@ namespace MVC_online_book_ticket.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomersId,Name,Phone,Birthday,Age,Gender")] Customers customer)
+        public async Task<IActionResult> Create([Bind("CustomersId,Name,Phone,Email,Birthday,Age,Gender")] Customers customer)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace MVC_online_book_ticket.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomersId,Name,Phone,Birthday,Age,Gender")] Customers customer)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomersId,Name,Phone,Email,Birthday,Age,Gender")] Customers customer)
         {
             if (id != customer.CustomersId)
             {

@@ -53,6 +53,11 @@
                                     </h6>
                                 </th>
                                 <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">
+                                        @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
+                                    </h6>
+                                </th>
+                                <th class="border-bottom-0">
                                 </th>
                             </tr>
                         </thead>
@@ -78,6 +83,11 @@
                                     <td class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">
                                             @Html.DisplayFor(modelItem => item.Phone)
+                                        </h6>
+                                    </td>
+                                    <td class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">
+                                            @Html.DisplayFor(modelItem => item.Email)
                                         </h6>
                                     </td>
                                     <td class="border-bottom-0">

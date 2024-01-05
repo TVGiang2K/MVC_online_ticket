@@ -63,6 +63,13 @@
 									</div>
 										<div class="col-xl-6 col-lg-6 col-md-6">
 											<div class="form-group">
+												<label asp-for="Email" class="form-label"></label>
+												<input asp-for="Email" class="form-control">
+												<span asp-validation-for="Email" class="form-text text-danger"></span>
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6">
+											<div class="form-group">
 												<label asp-for="Gender" class="form-label"></label></b>
 												<div class="radio inlineblock m-r-20">
 													<input asp-for="Gender" type="radio" id="M" class="with-gap" value="true" checked>

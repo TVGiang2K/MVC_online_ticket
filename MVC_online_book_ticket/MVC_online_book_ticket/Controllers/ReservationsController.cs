@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MVC_online_book_ticket.Data;
 using MVC_online_book_ticket.Models;
 using MVC_online_book_ticket.Models.DTOs;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace MVC_online_book_ticket.Controllers
 {
@@ -26,15 +27,31 @@ namespace MVC_online_book_ticket.Controllers
             ViewBag.IdTrip = id;
             if (idCus.HasValue)
             {
+
+                string token = HttpContext.Session.GetString("EmployeesLoginToken");
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+                int idAc = 0;
+                if (jsonToken != null)
+                {
+                    var accountsIdClaim = jsonToken.Claims.FirstOrDefault(claim => claim.Type == "AccountsId")?.Value;
+
+                    if (!string.IsNullOrEmpty(accountsIdClaim))
+                    {
+                        idAc = Convert.ToInt32(accountsIdClaim);
+                    }
+                }
+
                 var cus = await _context.Customers.FirstOrDefaultAsync(c => c.CustomersId == idCus);
                 var trip = await _context.Trips.FirstOrDefaultAsync(t => t.TripsId == id);
-
+                var acc = await _context.Accounts.FirstOrDefaultAsync(t => t.AccountsId == idAc);
 
                 var reservation = new Reservations
                 {
                     Customers = cus,
                     Trips = trip,
                     Vat = 10,
+                    Accounts = acc
                 };
                 var discountPercen = await _context.Financials.Where(x => x.FinancialFrom <= reservation.Customers.Age && x.FinancialTo > reservation.Customers.Age && x.Category == Category.Discount).Select(x => x.Percentage).FirstOrDefaultAsync();
 

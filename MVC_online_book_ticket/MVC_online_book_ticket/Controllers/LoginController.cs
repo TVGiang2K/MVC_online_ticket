@@ -47,7 +47,6 @@ namespace MVC_online_book_ticket.Controllers
                 {
                     var token = GenerateToken(checkAccount.Username, checkAccount.Role.ToString(), checkAccount.AccountsId.ToString());
                     HttpContext.Session.SetString("EmployeesLoginToken", token);
-                    HttpContext.Session.SetString("EmployeeId", checkAccount.AccountsId.ToString());
                     HttpContext.Session.SetString("EmployeeName", checkAccount.Username.ToString());
                     return RedirectToAction("Index", "Home");
                 }
@@ -186,8 +185,7 @@ namespace MVC_online_book_ticket.Controllers
 		[HttpGet]
         public IActionResult Logout()
         {
-            HttpContext.Session.Remove("LoginToken");
-            HttpContext.Session.Remove("EmployeeId");
+            HttpContext.Session.Remove("EmployeesLoginToken");
             HttpContext.Session.Remove("EmployeeName");
 
             return RedirectToAction("Index", "Home");

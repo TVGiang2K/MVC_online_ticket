@@ -58,7 +58,7 @@
                     <h4>Confirm</h4>
                 </div>
                 <form method="post" asp-action="ReservationsConfirm">
-                    <input type="hidden" asp-for="AccountsId" value="@HttpContextAccessor.HttpContext.Session.GetString("EmployeeId")" />
+                    <input type="hidden" asp-for="AccountsId" value="@rI.Accounts.AccountsId"/>
                     <input type="hidden" asp-for="CustomersId" value="@rI.Customers.CustomersId" />
                     <input type="hidden" asp-for="TripsId" value="@rI.Trips.TripsId" />
                     <div class="row align-items-start">

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XmgfPY5dXHWp06eXCU00LYvNeqhgWC0tOSqd3DPt+UzIcRPFw+vlnXjLGlXEYSw3wJDVBAk4+ckTEbhJrPZ/Ow==",
+  "dgSpecHash": "ZJRC89dLa+Y2z/ub8s7sCocX6ri6n9u1A9wfX9i9pG7TD7dn1F6LxY0tcQneKHzMYtbEJL9dvhapAhcVhgmeZg==",
   "success": true,
-  "projectFilePath": "G:\\SemIII\\eProject\\Project\\NewPro\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
+  "projectFilePath": "G:\\SemIII\\eProject\\demon\\MVC_online_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket\\MVC_online_book_ticket.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
